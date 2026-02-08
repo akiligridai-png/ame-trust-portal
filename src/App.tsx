@@ -7,6 +7,12 @@ import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import TeamPage from "./pages/TeamPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProtectionPlusPage from "./pages/ProtectionPlusPage";
+import GapInsurancePage from "./pages/GapInsurancePage";
+import AccidentInsurancePage from "./pages/AccidentInsurancePage";
+import CriticalIllnessPage from "./pages/CriticalIllnessPage";
+import HospitalIndemnityPage from "./pages/HospitalIndemnityPage";
+import ShortTermDisabilityPage from "./pages/ShortTermDisabilityPage";
 import AgentsPage from "./pages/AgentsPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
@@ -24,6 +30,12 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/protection-plus" element={<ProtectionPlusPage />} />
+          <Route path="/products/gap-insurance" element={<GapInsurancePage />} />
+          <Route path="/products/accident-insurance" element={<AccidentInsurancePage />} />
+          <Route path="/products/critical-illness" element={<CriticalIllnessPage />} />
+          <Route path="/products/hospital-indemnity" element={<HospitalIndemnityPage />} />
+          <Route path="/products/short-term-disability" element={<ShortTermDisabilityPage />} />
           <Route path="/agents" element={<AgentsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
