@@ -71,7 +71,7 @@ const HeroSection = () => {
               size="lg"
               className="bg-gold hover:bg-gold-dark text-primary-foreground font-bold px-8 shadow-gold transition-all duration-200 hover:scale-[1.02]"
             >
-              <Link to="/products">
+              <Link to="/products/protection-plus">
                 Explore Protection+
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>

@@ -7,7 +7,7 @@ const footerLinks = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Products", href: "/products" },
-      { label: "Protection+", href: "/products" },
+      { label: "Protection+", href: "/products/protection-plus" },
       { label: "Agents & Brokers", href: "/agents" },
       { label: "Contact Us", href: "/contact" },
     ],
@@ -15,12 +15,12 @@ const footerLinks = [
   {
     title: "Products",
     links: [
-      { label: "Protection+", href: "/products" },
-      { label: "GAP & GAP+", href: "/products" },
-      { label: "Accident Insurance", href: "/products" },
-      { label: "Critical Illness", href: "/products" },
-      { label: "Hospital Indemnity", href: "/products" },
-      { label: "Short-Term Disability", href: "/products" },
+      { label: "Protection+", href: "/products/protection-plus" },
+      { label: "GAP & GAP+", href: "/products/gap-insurance" },
+      { label: "Accident Insurance", href: "/products/accident-insurance" },
+      { label: "Critical Illness", href: "/products/critical-illness" },
+      { label: "Hospital Indemnity", href: "/products/hospital-indemnity" },
+      { label: "Short-Term Disability", href: "/products/short-term-disability" },
     ],
   },
 ];

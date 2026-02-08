@@ -58,7 +58,7 @@ const ProtectionPlusHighlight = () => {
               asChild
               className="bg-gold hover:bg-gold-dark text-primary-foreground font-bold px-8 shadow-gold transition-all duration-200 hover:scale-[1.02]"
             >
-              <Link to="/products">
+              <Link to="/products/protection-plus">
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
