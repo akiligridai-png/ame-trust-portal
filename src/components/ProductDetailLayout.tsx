@@ -120,7 +120,7 @@ const ProductDetailLayout = ({
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8"
+                  className="border-primary-foreground/30 text-primary-foreground bg-transparent hover:!bg-transparent hover:border-primary-foreground/60 font-semibold px-8"
                 >
                   <Link to="/products">
                     <ArrowLeft className="mr-2 w-4 h-4" />
