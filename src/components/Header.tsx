@@ -71,9 +71,9 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <Button
             variant="outline"
-            className="hidden sm:inline-flex border-gold text-gold hover:bg-gold hover:text-primary-foreground font-semibold text-sm transition-all duration-200"
+            className="hidden sm:inline-flex bg-gold hover:bg-gold-dark text-primary-foreground font-bold text-sm shadow-gold transition-all duration-200 hover:scale-[1.02] border-none"
           >
-            Broker/Client Login
+            Broker Login
           </Button>
 
           <button
@@ -106,9 +106,9 @@ const Header = () => {
             ))}
             <Button
               variant="outline"
-              className="mt-3 border-gold text-gold hover:bg-gold hover:text-primary-foreground font-semibold sm:hidden"
+              className="mt-3 bg-gold hover:bg-gold-dark text-primary-foreground font-bold shadow-gold transition-all duration-200 hover:scale-[1.02] border-none sm:hidden"
             >
-              Broker/Client Login
+              Broker Login
             </Button>
           </nav>
         </div>
