@@ -194,7 +194,7 @@ const GapInsurancePage = () => {
               Enhanced Coverage
             </span>
             <h2 className="text-3xl font-black text-primary mb-3">
-              GAP<span className="text-gold">+</span> — Advanced Protection
+              GAP<span className="text-gold">+</span> – Advanced Protection
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
               GAP+ has <span className="font-bold text-primary">GAP insurance embedded</span>. It integrates an enhanced GAP policy with a comprehensive bundle of healthcare services, incentivizing individuals to actively participate in their well-being.
@@ -237,7 +237,7 @@ const GapInsurancePage = () => {
               <h3 className="text-lg font-bold">Allied Wellness Integration</h3>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">
-              GAP+ provides access to Allied Wellness, a comprehensive wellness program that consolidates various healthcare services including a personal dietitian, prescription discount plan, and health advocacy services — all of which can be utilized to receive monthly GAP+ Health benefits.
+              GAP+ provides access to Allied Wellness, a comprehensive wellness program that consolidates various healthcare services including a personal dietitian, prescription discount plan, and health advocacy services – all of which can be utilized to receive monthly GAP+ Health benefits.
             </p>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Active participation in health screenings and treatments qualifies members to receive monthly claim payments from their GAP+ policy, directly offsetting the cost of coverage.

@@ -43,7 +43,7 @@ const CriticalIllnessPage = () => {
   return (
     <ProductDetailLayout
       title="Critical Illness Insurance"
-      subtitle="Vital financial assistance during severe illness — receive a lump sum payment directly upon diagnosis to cover deductibles, co-pays, and living expenses."
+      subtitle="Vital financial assistance during severe illness – receive a lump sum payment directly upon diagnosis to cover deductibles, co-pays, and living expenses."
       heroImage={heroImg}
       heroImageAlt="Resilient person with supportive family in comforting home environment"
     >

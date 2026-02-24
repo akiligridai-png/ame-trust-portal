@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import telemedicineImg from "@/assets/telemedicine.jpg";
 
 const benefits = [
-  "Dedicated Health Coaches — Live, medically licensed professionals",
+  "Dedicated Health Coaches – Live, medically licensed professionals",
   "First Dollar Coverage on hospital bills for employees & dependents",
   "Unlimited Telemedicine including mental health support",
-  "Net Zero Cost to most employees — uses subsidies from tax savings",
+  "Net Zero Cost to most employees – uses subsidies from tax savings",
   "No extra cost to add dependents",
   "Allied Wellness App for premium health content",
 ];

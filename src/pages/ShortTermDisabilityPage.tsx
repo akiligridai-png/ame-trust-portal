@@ -25,7 +25,7 @@ const ShortTermDisabilityPage = () => {
   return (
     <ProductDetailLayout
       title="Short-Term Disability"
-      subtitle="Partial income replacement when you're unable to work due to a covered injury or illness — helping maintain financial stability during recovery."
+      subtitle="Partial income replacement when you're unable to work due to a covered injury or illness – helping maintain financial stability during recovery."
       heroImage={heroImg}
       heroImageAlt="Professional woman recovering at home working on laptop"
     >

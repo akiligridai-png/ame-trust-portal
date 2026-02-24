@@ -81,7 +81,7 @@ const ProductsGrid = () => {
             Our Products
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive benefits solutions designed to protect what matters most — your health, your family, and your financial security.
+            Comprehensive benefits solutions designed to protect what matters most – your health, your family, and your financial security.
           </p>
         </motion.div>
 

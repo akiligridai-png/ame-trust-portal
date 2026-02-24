@@ -23,7 +23,7 @@ const AboutPage = () => {
                 About <span className="text-gold">AMETrust®</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                AME Multiple Employer Trust — One Stop Shopping for employer benefits since 1984.
+                AME Multiple Employer Trust – One Stop Shopping for employer benefits since 1984.
               </p>
             </motion.div>
           </div>
