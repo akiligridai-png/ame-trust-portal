@@ -1,6 +1,6 @@
 import ProductDetailLayout from "@/components/ProductDetailLayout";
 import { motion } from "framer-motion";
-import { Check, Shield, HeartPulse, Smartphone, DollarSign, Users, TrendingDown, Stethoscope, Activity } from "lucide-react";
+import { Check, Shield, HeartPulse, Smartphone, DollarSign, Users, Stethoscope, Activity, Building2 } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import heroImg from "@/assets/protection-plus-hero.jpg";
 import telemedicineImg from "@/assets/telemedicine.jpg";
@@ -22,10 +22,27 @@ const employeeBenefits = [
 ];
 
 const planOptions = [
-  { icon: Shield, name: "MEC Plan", desc: "Minimum Essential Coverage for employer compliance" },
-  { icon: HeartPulse, name: "Hospital Indemnity", desc: "Fixed daily cash benefits for hospital stays" },
-  { icon: Activity, name: "GAP Coverage", desc: "Covers expenses primary insurance doesn't" },
-  { icon: Shield, name: "MEC + Hospital Indemnity", desc: "Combined coverage for comprehensive protection" },
+  {
+    icon: HeartPulse,
+    name: "Option 1: GAP (Medical)",
+    desc: "Pays first dollar on coinsurance for Hospital Related Expenses ($5,000 or $2,500 options). Includes the Premier Accident Plan.",
+  },
+  {
+    icon: Building2,
+    name: "Option 2: Hospital Indemnity",
+    desc: "Fixed daily cash benefits for hospital stays resulting from covered accidents or sickness.",
+  },
+  {
+    icon: Shield,
+    name: "Option 3: MEC + Hospital Indemnity",
+    desc: "Combined Minimum Essential Coverage with Hospital Indemnity for comprehensive protection.",
+  },
+];
+
+const keyFeatures = [
+  { icon: Check, title: "Guaranteed Issue", desc: "No medical underwriting required for enrollment." },
+  { icon: Users, title: "No Extra Cost for Dependents", desc: "Dependents must be added during Open Enrollment at no additional charge." },
+  { icon: DollarSign, title: "Employer Savings", desc: "$561.60 annual FICA tax savings per enrolled employee." },
 ];
 
 const ProtectionPlusPage = () => {
@@ -172,7 +189,7 @@ const ProtectionPlusPage = () => {
         </div>
       </section>
 
-      {/* What's Included */}
+      {/* 3 Plan Options */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
@@ -183,35 +200,57 @@ const ProtectionPlusPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl font-black text-primary mb-3">
-              What's Included in Protection<span className="text-gold">+</span>
+              Protection<span className="text-gold">+</span> Plan Options
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive suite of benefits customizable for employer groups. Choose the plan that fits your organization.
+              Choose the plan that best fits your organization's needs. All options include access to wellness services.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {planOptions.map((plan, i) => (
               <motion.div
                 key={plan.name}
-                className="p-6 rounded-xl bg-card border border-border hover:border-gold/30 transition-all duration-300 hover:shadow-card-hover text-center"
+                className="p-7 rounded-xl bg-card border border-border hover:border-gold/30 transition-all duration-300 hover:shadow-card-hover text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mx-auto mb-4">
-                  <plan.icon className="w-6 h-6 text-gold" />
+                <div className="w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center mx-auto mb-4">
+                  <plan.icon className="w-7 h-7 text-gold" />
                 </div>
-                <h4 className="font-bold text-primary mb-2">{plan.name}</h4>
-                <p className="text-xs text-muted-foreground">{plan.desc}</p>
+                <h4 className="font-bold text-primary mb-3 text-base">{plan.name}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{plan.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Key Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {keyFeatures.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                className="flex items-start gap-4 p-5 rounded-lg bg-surface border border-border"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
+                  <feature.icon className="w-5 h-5 text-gold" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-primary mb-1 text-sm">{feature.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
 
           {/* Additional inclusions */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -221,7 +260,7 @@ const ProtectionPlusPage = () => {
               { icon: Stethoscope, title: "Telehealth Services", desc: "Unlimited Urgent Care, counseling, and psychiatric services via Telehealth." },
               { icon: HeartPulse, title: "Personal Health Coaching", desc: "Provided by a licensed Health Care Professional via the Allied Wellness platform." },
               { icon: Smartphone, title: "Allied Wellness App", desc: "Access to program features and premium content. No extra cost to add dependents." },
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.title} className="flex items-start gap-4 p-5 rounded-lg bg-surface border border-border">
                 <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
                   <item.icon className="w-5 h-5 text-gold" />

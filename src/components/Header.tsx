@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "The AME Trust Team", href: "/team" },
+  { label: "AMETrust® Overview", href: "/ametrust-overview" },
   { label: "Products", href: "/products" },
+  { label: "The AME Trust Team", href: "/team" },
   { label: "Agents and Brokers", href: "/agents" },
   { label: "Contact Us", href: "/contact" },
 ];

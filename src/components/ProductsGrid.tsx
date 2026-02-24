@@ -4,21 +4,21 @@ import { ArrowRight, Shield, HeartPulse, Stethoscope, Activity, Building2, Brief
 
 const products = [
   {
-    icon: Shield,
-    title: "Protection+",
-    subtitle: "Employer Health & Wellness Program",
-    description:
-      "Net zero cost to the employer with FICA tax savings. Includes dedicated health coaches, first dollar coverage, and unlimited telemedicine.",
-    highlight: true,
-    href: "/products/protection-plus",
-  },
-  {
     icon: HeartPulse,
     title: "GAP & GAP+",
     subtitle: "Guaranteed Asset Protection",
     description:
       "Covers hospital and outpatient benefits that primary insurance doesn't fully cover. GAP+ adds enhanced wellness services and monthly claim payments.",
+    highlight: true,
     href: "/products/gap-insurance",
+  },
+  {
+    icon: Shield,
+    title: "Protection+",
+    subtitle: "Employer Health & Wellness Program",
+    description:
+      "Net zero cost to the employer with FICA tax savings. Includes dedicated health coaches, first dollar coverage, and unlimited telemedicine.",
+    href: "/products/protection-plus",
   },
   {
     icon: Activity,
@@ -104,7 +104,7 @@ const ProductsGrid = () => {
               >
                 {product.highlight && (
                   <span className="absolute top-4 right-4 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold/20 text-gold rounded-full border border-gold/30">
-                    Featured
+                    Door Opener
                   </span>
                 )}
 

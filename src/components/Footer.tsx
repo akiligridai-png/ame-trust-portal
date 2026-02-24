@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const footerLinks = [
   {
     title: "Quick Links",
     links: [
-      { label: "About Us", href: "/about" },
+      { label: "AMETrust® Overview", href: "/ametrust-overview" },
       { label: "Products", href: "/products" },
       { label: "Protection+", href: "/products/protection-plus" },
       { label: "Agents & Brokers", href: "/agents" },
@@ -131,10 +131,23 @@ const Footer = () => {
           <p className="text-xs text-primary-foreground/50">
             © {new Date().getFullYear()} AME Trust Benefits. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-primary-foreground/50">
-            <span className="hover:text-gold cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-gold cursor-pointer transition-colors">Terms of Service</span>
-            <span className="hover:text-gold cursor-pointer transition-colors">Legal Disclaimer</span>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 mr-4">
+              <a href="https://www.linkedin.com/company/ametrust" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="AMETrust LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://www.linkedin.com/company/ametrust-benefits" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="AMETrust Benefits LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://www.linkedin.com/in/ametrust-founder" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="Founder LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+            <div className="flex items-center gap-4 text-xs text-primary-foreground/50">
+              <span className="hover:text-gold cursor-pointer transition-colors">Privacy Policy</span>
+              <span className="hover:text-gold cursor-pointer transition-colors">Terms of Service</span>
+              <span className="hover:text-gold cursor-pointer transition-colors">Legal Disclaimer</span>
+            </div>
           </div>
         </div>
       </div>

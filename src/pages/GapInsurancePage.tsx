@@ -1,6 +1,6 @@
 import ProductDetailLayout from "@/components/ProductDetailLayout";
 import { motion } from "framer-motion";
-import { Shield, HeartPulse, Stethoscope, Activity, Smartphone, Check } from "lucide-react";
+import { Shield, HeartPulse, Stethoscope, Activity, Smartphone, Check, DollarSign, AlertCircle } from "lucide-react";
 import heroImg from "@/assets/gap-insurance-hero.jpg";
 
 const inpatientBenefits = [
@@ -17,11 +17,14 @@ const outpatientBenefits = [
   "Hospital and Physician expenses for other outpatient treatments",
 ];
 
-const gapPlusFeatures = [
-  { icon: HeartPulse, title: "Inpatient Benefits", desc: "Payment when hospitalized for a minimum period due to sickness or injury." },
-  { icon: Activity, title: "Outpatient Benefits", desc: "Payment for specific treatments like MRI scans or emergency room visits without hospital stay." },
-  { icon: Stethoscope, title: "Screening & Diagnostic", desc: "Payment for biometric screens, cholesterol tests, or health risk assessments." },
-  { icon: Shield, title: "Treatment Benefits", desc: "Covers consultations with healthcare professionals, prescription refills, and dental visits." },
+const gapPlusBullets = [
+  "Health program with Net Zero Cost to the employer",
+  "Medical Claim Reimbursements are made by AME and sent directly to the Employee",
+  "FICA tax savings per enrolled employee",
+  "Access to Dedicated, Medically Licensed Health Coaches",
+  "First Dollar Coverage on hospital bills for employees and dependents",
+  "Unlimited Telemedicine including mental health support",
+  "Access to the Allied Wellness App for premium health content",
 ];
 
 const GapInsurancePage = () => {
@@ -33,7 +36,7 @@ const GapInsurancePage = () => {
       heroImage={heroImg}
       heroImageAlt="Bridge symbolizing financial protection gap coverage"
     >
-      {/* What is GAP */}
+      {/* Key Messaging */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -52,7 +55,28 @@ const GapInsurancePage = () => {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 GAP insurance functions in conjunction with primary health insurance to alleviate the financial burden of medical expenses that would typically be the patient's responsibility. In the event of an injury or illness covered by health insurance, AME Trust will provide reimbursement up to a specified maximum benefit.
               </p>
-              <div className="p-5 rounded-lg bg-surface border border-border mb-8">
+
+              {/* Key Messaging Box */}
+              <div className="p-5 rounded-lg bg-primary text-primary-foreground mb-6">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                  <p className="text-sm leading-relaxed">
+                    <span className="font-bold text-gold">AMETrust®'s Medical Gap Coverage</span> is available in all 50 states with Employer Group size limitations (10 or more) eliminated.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pricing Note */}
+              <div className="p-5 rounded-lg bg-surface border border-border mb-6">
+                <div className="flex items-start gap-3">
+                  <DollarSign className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    AMETrust has composite and age-banded pricing. Custom pricing is available; please contact us directly with any specific need.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-5 rounded-lg bg-surface border border-border">
                 <p className="text-sm text-muted-foreground mb-1">Benefits Received</p>
                 <p className="text-primary font-bold text-lg">
                   Up to the annual maximum <span className="text-gold">covering both Inpatient and Outpatient Benefits</span> per Covered Member
@@ -75,7 +99,7 @@ const GapInsurancePage = () => {
           >
             <h2 className="text-3xl font-black text-primary mb-3">What's Covered</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive coverage for both inpatient and outpatient medical expenses.
+              Comprehensive coverage for both inpatient and outpatient medical expenses. See products tab for additional information.
             </p>
           </motion.div>
 
@@ -173,27 +197,31 @@ const GapInsurancePage = () => {
               GAP<span className="text-gold">+</span> — Advanced Protection
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              GAP+ integrates an enhanced GAP policy with a comprehensive bundle of healthcare services. It incentivizes individuals to actively participate in their well-being by providing a mechanism to fund the insurance.
+              GAP+ has <span className="font-bold text-primary">GAP insurance embedded</span>. It integrates an enhanced GAP policy with a comprehensive bundle of healthcare services, incentivizing individuals to actively participate in their well-being.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {gapPlusFeatures.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                className="p-6 rounded-xl bg-card border border-border hover:border-gold/30 transition-all duration-300 hover:shadow-card-hover text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-              >
-                <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-6 h-6 text-gold" />
-                </div>
-                <h4 className="font-bold text-primary mb-2 text-sm">{feature.title}</h4>
-                <p className="text-xs text-muted-foreground">{feature.desc}</p>
-              </motion.div>
-            ))}
+          {/* GAP+ Bullet Points */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <motion.div
+              className="p-6 rounded-xl bg-card border border-border shadow-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="font-bold text-primary mb-4 text-lg">GAP+ Includes:</h3>
+              <ul className="space-y-3">
+                {gapPlusBullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-gold" />
+                    </div>
+                    <span className="text-sm text-muted-foreground">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
 
           {/* Allied Wellness */}
@@ -213,20 +241,6 @@ const GapInsurancePage = () => {
             </p>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Active participation in health screenings and treatments qualifies members to receive monthly claim payments from their GAP+ policy, directly offsetting the cost of coverage.
-            </p>
-          </motion.div>
-
-          {/* GAP+ Example */}
-          <motion.div
-            className="max-w-3xl mx-auto mt-8 p-6 rounded-xl bg-card border border-border"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-sm font-semibold text-gold uppercase tracking-wider mb-2">GAP+ Example Scenario</p>
-            <p className="text-muted-foreground leading-relaxed">
-              Ed, enrolled in GAP+, consults his personal dietitian and refills his blood pressure medication monthly. For engaging in these health activities, he receives monthly payments deposited on the same day as his paycheck, helping offset the cost of his GAP+ policy. If Ed were to fall and require emergency room treatment, an MRI, and be diagnosed with a concussion, his GAP+ policy would cover $2,500 of outpatient benefits. Additionally, his AME Trust Accident Policy would pay him for his ER treatment, MRI, and concussion diagnosis — irrespective of his medical expenses.
             </p>
           </motion.div>
         </div>

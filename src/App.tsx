@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import AboutPage from "./pages/AboutPage";
+import AMETrustOverviewPage from "./pages/AMETrustOverviewPage";
 import TeamPage from "./pages/TeamPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProtectionPlusPage from "./pages/ProtectionPlusPage";
@@ -14,6 +14,7 @@ import CriticalIllnessPage from "./pages/CriticalIllnessPage";
 import HospitalIndemnityPage from "./pages/HospitalIndemnityPage";
 import ShortTermDisabilityPage from "./pages/ShortTermDisabilityPage";
 import AgentsPage from "./pages/AgentsPage";
+import BrokerAppointmentPage from "./pages/BrokerAppointmentPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
@@ -27,7 +28,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/ametrust-overview" element={<AMETrustOverviewPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/protection-plus" element={<ProtectionPlusPage />} />
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/products/hospital-indemnity" element={<HospitalIndemnityPage />} />
           <Route path="/products/short-term-disability" element={<ShortTermDisabilityPage />} />
           <Route path="/agents" element={<AgentsPage />} />
+          <Route path="/broker-appointment" element={<BrokerAppointmentPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
