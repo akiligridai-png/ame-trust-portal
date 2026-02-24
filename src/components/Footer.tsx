@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 const footerLinks = [
   {
     title: "Quick Links",
     links: [
-      { label: "About Us", href: "/about" },
+      { label: "Home", href: "/" },
+      { label: "AMETrust® Overview", href: "/overview" },
       { label: "Products", href: "/products" },
-      { label: "Protection+", href: "/products/protection-plus" },
       { label: "Agents & Brokers", href: "/agents" },
       { label: "Contact Us", href: "/contact" },
     ],
@@ -15,14 +15,20 @@ const footerLinks = [
   {
     title: "Products",
     links: [
-      { label: "Protection+", href: "/products/protection-plus" },
       { label: "GAP & GAP+", href: "/products/gap-insurance" },
+      { label: "Protection+", href: "/products/protection-plus" },
       { label: "Accident Insurance", href: "/products/accident-insurance" },
       { label: "Critical Illness", href: "/products/critical-illness" },
       { label: "Hospital Indemnity", href: "/products/hospital-indemnity" },
       { label: "Short-Term Disability", href: "/products/short-term-disability" },
     ],
   },
+];
+
+const linkedInLinks = [
+  { label: "AMETrust", href: "https://www.linkedin.com/company/ametrust" },
+  { label: "AMETrust Benefits", href: "https://www.linkedin.com/company/ametrustbenefits" },
+  { label: "Founder / Executive", href: "https://www.linkedin.com/in/ametrust-founder" },
 ];
 
 const Footer = () => {
@@ -52,9 +58,29 @@ const Footer = () => {
               </p>
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed mb-6">
-              AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®,
-              a Multiple and Multi-Employer Trust encompassing various Employer groups and Associations.
+              AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®.
+              Acting as the MGA for brokers & third-party administrators, we provide white-glove support to all employer groups.
             </p>
+
+            {/* LinkedIn Icons */}
+            <div className="mt-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-gold mb-3">Connect With Us</p>
+              <div className="flex flex-wrap gap-3">
+                {linkedInLinks.map((li) => (
+                  <a
+                    key={li.label}
+                    href={li.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-gold transition-colors"
+                    title={li.label}
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span className="text-xs">{li.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Link Columns */}

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -20,6 +21,7 @@ interface ProductDetailLayoutProps {
   heroImage: string;
   heroImageAlt: string;
   children: React.ReactNode;
+  productName?: string;
 }
 
 const ProductDetailLayout = ({
@@ -29,7 +31,10 @@ const ProductDetailLayout = ({
   heroImage,
   heroImageAlt,
   children,
+  productName,
 }: ProductDetailLayoutProps) => {
+  const displayName = productName || (titleAccent ? `${title}${titleAccent}` : title);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -66,7 +71,7 @@ const ProductDetailLayout = ({
                 <BreadcrumbSeparator className="text-primary-foreground/40" />
                 <BreadcrumbItem>
                   <BreadcrumbPage className="text-gold font-semibold">
-                    {titleAccent ? `${title}${titleAccent}` : title}
+                    {displayName}
                   </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
@@ -89,6 +94,9 @@ const ProductDetailLayout = ({
 
         {/* Content */}
         {children}
+
+        {/* Video Section */}
+        <VideoSection productName={displayName} />
 
         {/* CTA Banner */}
         <section className="py-16 bg-primary">
