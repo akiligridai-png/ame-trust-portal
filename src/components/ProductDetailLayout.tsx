@@ -36,7 +36,7 @@ const ProductDetailLayout = ({
       <main className="pt-24">
         {/* Hero Banner */}
         <section className="relative py-20 bg-primary overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0">
             <img
               src={heroImage}
               alt={heroImageAlt}
@@ -44,7 +44,7 @@ const ProductDetailLayout = ({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/50" />
           <div className="relative container mx-auto px-4">
             <Breadcrumb className="mb-6">
               <BreadcrumbList>
