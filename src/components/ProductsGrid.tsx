@@ -112,7 +112,7 @@ const ProductsGrid = () => {
               >
                 {product.highlight && (
                   <span className="absolute top-4 right-4 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold/20 text-gold rounded-full border border-gold/30">
-                    Door Opener
+                    Featured Product
                   </span>
                 )}
 

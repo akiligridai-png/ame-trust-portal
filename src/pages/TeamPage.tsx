@@ -11,19 +11,19 @@ const teamMembers = [
 
 const partnerSections = [
   {
-    title: "AMETrust",
-    role: "Trust Administration",
-    description: "Responsible for creating and managing fiduciary and plan administration service-operations.",
+    title: "AMETrust®",
+    role: "Trust Administration & Plan Design",
+    description: "AMETrust® creates and uses its own plan designs. Responsible for fiduciary oversight and plan administration service-operations.",
   },
   {
-    title: "Allied TOA",
-    role: "Partner Services",
-    description: "Contact info and links coming soon.",
+    title: "Allied TPA",
+    role: "Technology, Claims & Customer Service",
+    description: "Allied TPA supports technology, claims and customer service for all AMETrust® plans.",
   },
   {
     title: "Allied Wellness",
     role: "Health & Wellness Platform",
-    description: "Delivers the comprehensive health and wellness platform, including access to professional health coaches.",
+    description: "Allied Wellness delivers the health and wellness platform & health coaches. Provides access to professional health coaches and comprehensive wellness programs.",
     contacts: [
       { type: "phone", value: "(800) 555-0100", label: "Main Line" },
       { type: "email", value: "wellness@alliedwellness.com", label: "General Inquiries" },
