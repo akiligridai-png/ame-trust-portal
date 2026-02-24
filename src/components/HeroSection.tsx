@@ -7,43 +7,18 @@ import heroImage from "@/assets/hero-image.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image with Ken Burns cinematic loop */}
+      {/* Background Image */}
       <div className="absolute inset-0">
-        <div className="absolute inset-[-10%] hero-ken-burns">
-          <img
-            src={heroImage}
-            alt="Diverse group of professionals and families walking confidently in a park"
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
-        </div>
-
-        {/* Cinematic gradient overlay */}
+        <motion.img
+          src={heroImage}
+          alt="Diverse group of professionals and families walking confidently in a park"
+          className="w-full h-full object-cover"
+          loading="eager"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        />
         <div className="absolute inset-0 gradient-hero" />
-
-        {/* Vignette edges */}
-        <div
-          className="absolute inset-0 hero-vignette-pulse pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse at center, transparent 40%, hsla(210, 100%, 8%, 0.7) 100%)",
-          }}
-        />
-
-        {/* Light sweep for live-motion feel */}
-        <div
-          className="absolute inset-0 hero-light-sweep pointer-events-none"
-          style={{
-            background: "linear-gradient(105deg, transparent 30%, hsla(38, 90%, 70%, 0.12) 50%, transparent 70%)",
-          }}
-        />
-
-        {/* Film grain texture */}
-        <div
-          className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-          style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
-          }}
-        />
       </div>
 
       {/* Content */}
