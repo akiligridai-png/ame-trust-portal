@@ -38,8 +38,8 @@ const GapPlusPage = () => {
               <h2 className="text-3xl font-black text-primary mb-4">
                 What is GAP<span className="text-gold">+</span>?
               </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                GAP+ has <span className="font-bold text-primary">GAP insurance embedded</span>. It integrates an enhanced GAP policy with a comprehensive bundle of healthcare services, incentivizing individuals to actively participate in their well-being.
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                GAP+ has <span className="font-bold text-primary">GAP insurance embedded</span>. GAP+ integrates an enhanced GAP policy with a comprehensive bundle of healthcare services. It incentivizes individuals to actively participate in their well-being by providing a mechanism to fund the insurance.
               </p>
 
               <div className="p-5 rounded-lg bg-primary text-primary-foreground mb-6">
@@ -148,9 +148,15 @@ const GapPlusPage = () => {
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">
               GAP+ provides access to Allied Wellness, a comprehensive wellness program that consolidates various healthcare services including a personal dietitian, prescription discount plan, and health advocacy services – all of which can be utilized to receive monthly GAP+ Health benefits.
             </p>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+            <p className="text-primary-foreground/70 text-sm leading-relaxed mb-4">
               Active participation in health screenings and treatments qualifies members to receive monthly claim payments from their GAP+ policy, directly offsetting the cost of coverage.
             </p>
+            <div className="p-4 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20">
+              <p className="text-xs text-primary-foreground/60 uppercase font-bold tracking-wider mb-2">Real-World Example</p>
+              <p className="text-sm text-primary-foreground/80 leading-relaxed">
+                Ed, enrolled in GAP+, consults his personal dietitian and refills his blood pressure medication monthly. GAP would cover outpatient benefits. Additionally, his AME Trust Accident Policy would pay him for his ER treatment, MRI, and concussion diagnosis – irrespective of his medical expenses.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

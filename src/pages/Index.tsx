@@ -46,6 +46,9 @@ const Index = () => {
                     <li>• All participants share equally in benefits forfeited by other members</li>
                   </ul>
                 </div>
+                <p className="text-sm text-muted-foreground mb-4 italic">
+                  If you are interested in getting appointed as a Broker, please click on Get Appointed with AMETrust.
+                </p>
                 <Button asChild className="bg-gold hover:bg-gold-dark text-primary-foreground font-bold shadow-gold transition-all duration-200 hover:scale-[1.02]">
                   <Link to="/broker-appointment">
                     Get Appointed with AMETrust®
