@@ -4,15 +4,26 @@ import { motion } from "framer-motion";
 import { User, Phone, Mail, ExternalLink } from "lucide-react";
 
 const teamMembers = [
-  { name: "Bob Worgaftik", title: "Founder & Executive Director", bio: "Visionary leader with decades of experience in employee benefits and trust administration." },
-  { name: "Richard Gribinas", title: "Managing Director", bio: "Strategic operations leader focused on broker partnerships and organizational growth." },
-  { name: "Pamela Mellor", title: "Director of Operations", bio: "Experienced professional overseeing day-to-day operations and client services excellence." },
+  { name: "Bob Worgaftik", title: "General Agent", bio: "Seasoned benefits professional with extensive experience in employee benefits and trust administration." },
+  { name: "Richard Gribinas", title: "General Agent", bio: "Strategic leader focused on broker partnerships and organizational growth." },
+  { name: "Pamela Mellor", title: "Associate General Agent", bio: "Experienced professional dedicated to day-to-day operations and client services excellence." },
 ];
 
-const contactSections = [
+const partnerSections = [
+  {
+    title: "AMETrust",
+    role: "Trust Administration",
+    description: "Responsible for creating and managing fiduciary and plan administration service-operations.",
+  },
+  {
+    title: "Allied TOA",
+    role: "Partner Services",
+    description: "Contact info and links coming soon.",
+  },
   {
     title: "Allied Wellness",
     role: "Health & Wellness Platform",
+    description: "Delivers the comprehensive health and wellness platform, including access to professional health coaches.",
     contacts: [
       { type: "phone", value: "(800) 555-0100", label: "Main Line" },
       { type: "email", value: "wellness@alliedwellness.com", label: "General Inquiries" },
@@ -22,6 +33,7 @@ const contactSections = [
   {
     title: "ATPA Claims / Customer Service",
     role: "Technology, Claims & Customer Service",
+    description: "For claims and customer service inquiries, please reach out to the appropriate contact.",
     contacts: [
       { type: "phone", value: "(800) 555-0200", label: "Claims Line" },
       { type: "email", value: "claims@atpa.com", label: "Claims Support" },
@@ -48,7 +60,7 @@ const TeamPage = () => {
                 The AMETrust® <span className="text-gold">Team</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                AME Trust Benefits works synergistically with its dedicated and experienced team to deliver exceptional service.
+                The AME Trust Benefits team works synergistically with dedicated and experienced partners to deliver comprehensive benefits solutions. Each partner brings unique specialties.
               </p>
             </motion.div>
           </div>
@@ -96,7 +108,7 @@ const TeamPage = () => {
           </div>
         </section>
 
-        {/* Contact Sections */}
+        {/* Synergistic Partnership */}
         <section className="py-16 bg-surface">
           <div className="container mx-auto px-4">
             <motion.div
@@ -106,14 +118,14 @@ const TeamPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-black text-primary mb-3">Partner Contacts</h2>
+              <h2 className="text-3xl font-black text-primary mb-3">Synergistic Partnership</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Reach out to our trusted partners for wellness, claims, and customer service support.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {contactSections.map((section, i) => (
+              {partnerSections.map((section, i) => (
                 <motion.div
                   key={section.title}
                   className="p-6 rounded-xl bg-card border border-border"
@@ -123,20 +135,23 @@ const TeamPage = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <h3 className="font-bold text-primary text-lg mb-1">{section.title}</h3>
-                  <p className="text-gold text-sm font-semibold mb-4">{section.role}</p>
-                  <div className="space-y-3">
-                    {section.contacts.map((contact) => (
-                      <div key={contact.label} className="flex items-center gap-3">
-                        {contact.type === "phone" && <Phone className="w-4 h-4 text-gold shrink-0" />}
-                        {contact.type === "email" && <Mail className="w-4 h-4 text-gold shrink-0" />}
-                        {contact.type === "link" && <ExternalLink className="w-4 h-4 text-gold shrink-0" />}
-                        <div>
-                          <p className="text-xs text-muted-foreground">{contact.label}</p>
-                          <p className="text-sm text-primary font-medium">{contact.value}</p>
+                  <p className="text-gold text-sm font-semibold mb-2">{section.role}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">{section.description}</p>
+                  {section.contacts && (
+                    <div className="space-y-3">
+                      {section.contacts.map((contact) => (
+                        <div key={contact.label} className="flex items-center gap-3">
+                          {contact.type === "phone" && <Phone className="w-4 h-4 text-gold shrink-0" />}
+                          {contact.type === "email" && <Mail className="w-4 h-4 text-gold shrink-0" />}
+                          {contact.type === "link" && <ExternalLink className="w-4 h-4 text-gold shrink-0" />}
+                          <div>
+                            <p className="text-xs text-muted-foreground">{contact.label}</p>
+                            <p className="text-sm text-primary font-medium">{contact.value}</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>
