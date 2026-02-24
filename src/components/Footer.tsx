@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const footerLinks = [
   {
@@ -31,10 +32,16 @@ const Footer = () => {
       {/* Mission Banner */}
       <div className="border-b border-navy-light/20">
         <div className="container mx-auto px-4 py-8 text-center">
-          <p className="text-gold italic text-lg font-light max-w-3xl mx-auto">
+          <motion.p
+            className="text-gold italic text-lg font-light max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             "To make healthcare affordable for every working American through innovative products,
             creative strategies, cutting edge technology and comprehensive wellness initiatives."
-          </p>
+          </motion.p>
         </div>
       </div>
 
@@ -42,7 +49,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <motion.div
+            className="lg:col-span-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="mb-4">
               <span className="text-2xl font-black tracking-tight">
                 AME<span className="text-gold">Trust</span>
@@ -55,11 +68,17 @@ const Footer = () => {
               AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®,
               a Multiple and Multi-Employer Trust encompassing various Employer groups and Associations.
             </p>
-          </div>
+          </motion.div>
 
           {/* Link Columns */}
-          {footerLinks.map((group) => (
-            <div key={group.title}>
+          {footerLinks.map((group, i) => (
+            <motion.div
+              key={group.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
+            >
               <h4 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
                 {group.title}
               </h4>
@@ -75,11 +94,16 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
 
           {/* Contact Column */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <h4 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
               Contact
             </h4>
@@ -121,7 +145,7 @@ const Footer = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
 

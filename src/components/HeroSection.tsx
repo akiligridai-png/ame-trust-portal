@@ -9,11 +9,14 @@ const HeroSection = () => {
     <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <motion.img
           src={heroImage}
           alt="Diverse group of professionals and families walking confidently in a park"
           className="w-full h-full object-cover"
           loading="eager"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         />
         <div className="absolute inset-0 gradient-hero" />
       </div>
@@ -71,8 +74,8 @@ const HeroSection = () => {
               size="lg"
               className="bg-gold hover:bg-gold-dark text-primary-foreground font-bold px-8 shadow-gold transition-all duration-200 hover:scale-[1.02]"
             >
-              <Link to="/products/protection-plus">
-                Explore Protection+
+              <Link to="/products/gap-insurance">
+                Explore GAP Insurance
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>

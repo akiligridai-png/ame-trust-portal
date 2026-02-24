@@ -65,13 +65,13 @@ const products = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  hidden: { opacity: 0, y: 40, scale: 0.97 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
 const ProductsGrid = () => {
@@ -104,6 +104,7 @@ const ProductsGrid = () => {
             <Link key={product.title} to={product.href}>
               <motion.div
                 variants={itemVariants}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className={`group relative p-7 rounded-xl border transition-all duration-300 hover:shadow-card-hover cursor-pointer h-full ${
                   product.highlight
                     ? "bg-primary border-gold/30 shadow-card"
@@ -138,9 +139,7 @@ const ProductsGrid = () => {
                   {product.title}
                 </h3>
                 <p
-                  className={`text-xs font-semibold mb-3 ${
-                    product.highlight ? "text-gold" : "text-gold"
-                  }`}
+                  className="text-xs font-semibold mb-3 text-gold"
                 >
                   {product.subtitle}
                 </p>
