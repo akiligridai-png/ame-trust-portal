@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToHome from "@/components/BackToHome";
 import ProductsGrid from "@/components/ProductsGrid";
 import ProtectionPlusHighlight from "@/components/ProtectionPlusHighlight";
 import { motion } from "framer-motion";
@@ -12,6 +13,7 @@ const ProductsPage = () => {
         {/* Hero */}
         <section className="py-16 bg-primary">
           <div className="container mx-auto px-4">
+            <BackToHome />
             <motion.div
               className="max-w-3xl"
               initial={{ opacity: 0, y: 20 }}

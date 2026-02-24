@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
 import { User, Phone, Mail, ExternalLink } from "lucide-react";
 
@@ -50,6 +51,7 @@ const TeamPage = () => {
         {/* Hero */}
         <section className="py-16 bg-primary">
           <div className="container mx-auto px-4">
+            <BackToHome />
             <motion.div
               className="max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
