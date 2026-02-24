@@ -60,7 +60,7 @@ const AgentsPage = () => {
           </div>
         </section>
 
-        <BrokerSection />
+        
       </main>
       <Footer />
     </div>
