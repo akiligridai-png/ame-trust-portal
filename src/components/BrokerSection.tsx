@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Handshake, LayoutDashboard, FileSpreadsheet, GraduationCap } from "lucide-react";
+import { Handshake, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import brokersImg from "@/assets/brokers-support.jpg";
 
@@ -9,16 +9,6 @@ const features = [
     icon: Handshake,
     title: "White Glove Support",
     description: "Access to a dedicated Client Services team for personalized assistance.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Broker Portal",
-    description: "Secure online platform for managing client accounts and tracking commissions.",
-  },
-  {
-    icon: FileSpreadsheet,
-    title: "Census Tools",
-    description: "Streamlined tools to upload employee census data and generate accurate quotes.",
   },
   {
     icon: GraduationCap,

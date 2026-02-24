@@ -127,12 +127,12 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-navy-light/20">
-        <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-primary-foreground/50">
+        <div className="container mx-auto px-4 py-5 flex flex-col items-center gap-4 sm:flex-row sm:justify-between sm:gap-3">
+          <p className="text-xs text-primary-foreground/50 text-center sm:text-left">
             © {new Date().getFullYear()} AME Trust Benefits. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 mr-4">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <div className="flex items-center gap-3">
               <a href="https://www.linkedin.com/company/ametrust" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="AMETrust LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -143,7 +143,7 @@ const Footer = () => {
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
-            <div className="flex items-center gap-4 text-xs text-primary-foreground/50">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-primary-foreground/50">
               <span className="hover:text-gold cursor-pointer transition-colors">Privacy Policy</span>
               <span className="hover:text-gold cursor-pointer transition-colors">Terms of Service</span>
               <span className="hover:text-gold cursor-pointer transition-colors">Legal Disclaimer</span>
