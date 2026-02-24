@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BrokerSection from "@/components/BrokerSection";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import brokerAppointedImg from "@/assets/broker-appointed.jpg";
 
 const AgentsPage = () => {
   return (
@@ -30,33 +30,48 @@ const AgentsPage = () => {
           </div>
         </section>
 
-        {/* Get Appointed CTA */}
+        {/* Get Appointed CTA with Image */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
-            <motion.div
-              className="max-w-2xl mx-auto text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl font-black text-primary mb-4">
-                Get Appointed with AMETrust®
-              </h2>
-              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Join our network of trusted brokers and gain access to AMETrust's comprehensive benefits portfolio. Start the appointment process today.
-              </p>
-              <Button
-                asChild
-                size="lg"
-                className="bg-gold hover:bg-gold-dark text-primary-foreground font-bold px-8 shadow-gold transition-all duration-200 hover:scale-[1.02]"
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                className="text-center lg:text-left"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
               >
-                <Link to="/broker-appointment">
-                  Start Appointment Process
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
-            </motion.div>
+                <h2 className="text-3xl font-black text-primary mb-4">
+                  Get Appointed with AMETrust®
+                </h2>
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
+                  Join our network of trusted brokers and gain access to AMETrust's comprehensive benefits portfolio. Start the appointment process today.
+                </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-gold hover:bg-gold-dark text-primary-foreground font-bold px-8 shadow-gold transition-all duration-200 hover:scale-[1.02]"
+                >
+                  <Link to="/broker-appointment">
+                    Start Appointment Process
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+              >
+                <img
+                  src={brokerAppointedImg}
+                  alt="Professional brokers shaking hands in modern office"
+                  className="rounded-2xl shadow-lg w-full h-[380px] object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            </div>
           </div>
         </section>
 
