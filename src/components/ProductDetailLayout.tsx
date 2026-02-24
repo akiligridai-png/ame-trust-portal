@@ -107,9 +107,6 @@ const ProductDetailLayout = ({
                   <p className="text-sm text-muted-foreground font-medium">Video Coming Soon</p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground italic">
-                This video can be shared across AMETrust's website and all social media channels.
-              </p>
             </div>
           </div>
         </section>

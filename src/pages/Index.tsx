@@ -117,7 +117,7 @@ const Index = () => {
         </section>
 
         <ProductsGrid />
-        <BrokerSection />
+        
       </main>
       <Footer />
     </div>
