@@ -26,7 +26,7 @@ const ProtectionPlusHighlight = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase rounded-full bg-gold/10 text-gold border border-gold/20">
-              Featured Product
+              Flagship Product
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-primary mb-4 leading-tight">
               Protection<span className="text-gold">+</span>
@@ -82,7 +82,7 @@ const ProtectionPlusHighlight = () => {
               />
             </div>
             {/* Floating stat card */}
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-5 shadow-lg border border-border max-w-[220px]">
+            <div className="absolute -bottom-6 left-2 sm:-left-6 bg-card rounded-xl p-4 sm:p-5 shadow-lg border border-border max-w-[200px] sm:max-w-[220px]">
               <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Employer Benefit</p>
               <p className="text-2xl font-black text-gold">Net Zero</p>
               <p className="text-xs text-muted-foreground">Cost to implement</p>
