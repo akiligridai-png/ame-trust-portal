@@ -90,6 +90,30 @@ const ProductDetailLayout = ({
         {/* Content */}
         {children}
 
+        {/* Video Section Placeholder */}
+        <section className="py-16 bg-surface">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl font-black text-primary mb-4">
+                Learn More About {titleAccent ? `${title}${titleAccent}` : title}
+              </h2>
+              <div className="aspect-video rounded-xl bg-primary/5 border-2 border-dashed border-border flex items-center justify-center mb-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-medium">Video Coming Soon</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground italic">
+                This video can be shared across AMETrust's website and all social media channels.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Banner */}
         <section className="py-16 bg-primary">
           <div className="container mx-auto px-4 text-center">
