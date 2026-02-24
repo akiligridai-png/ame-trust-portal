@@ -5,12 +5,20 @@ import { ArrowRight, Shield, HeartPulse, Stethoscope, Activity, Building2, Brief
 const products = [
   {
     icon: HeartPulse,
-    title: "GAP & GAP+",
+    title: "GAP Insurance",
     subtitle: "Guaranteed Asset Protection",
     description:
-      "Covers hospital and outpatient benefits that primary insurance doesn't fully cover. GAP+ adds enhanced wellness services and monthly claim payments.",
+      "Covers hospital and outpatient benefits that primary insurance doesn't fully cover. Available in all 50 states with no employer group size limitations.",
     highlight: true,
     href: "/products/gap-insurance",
+  },
+  {
+    icon: Shield,
+    title: "GAP+",
+    subtitle: "Enhanced GAP with Wellness",
+    description:
+      "GAP insurance embedded plus Net Zero Cost to employer, FICA tax savings, dedicated health coaches, and unlimited telemedicine.",
+    href: "/products/gap-plus",
   },
   {
     icon: Shield,

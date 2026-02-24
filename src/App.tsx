@@ -9,6 +9,7 @@ import TeamPage from "./pages/TeamPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProtectionPlusPage from "./pages/ProtectionPlusPage";
 import GapInsurancePage from "./pages/GapInsurancePage";
+import GapPlusPage from "./pages/GapPlusPage";
 import AccidentInsurancePage from "./pages/AccidentInsurancePage";
 import CriticalIllnessPage from "./pages/CriticalIllnessPage";
 import HospitalIndemnityPage from "./pages/HospitalIndemnityPage";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/protection-plus" element={<ProtectionPlusPage />} />
           <Route path="/products/gap-insurance" element={<GapInsurancePage />} />
+          <Route path="/products/gap-plus" element={<GapPlusPage />} />
           <Route path="/products/accident-insurance" element={<AccidentInsurancePage />} />
           <Route path="/products/critical-illness" element={<CriticalIllnessPage />} />
           <Route path="/products/hospital-indemnity" element={<HospitalIndemnityPage />} />
