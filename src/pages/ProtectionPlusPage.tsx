@@ -16,7 +16,7 @@ const employeeBenefits = [
   { benefit: "Dedicated Health Coach", detail: "Live, dedicated, medically licensed health professionals" },
   { benefit: "First Dollar Coverage", detail: "Hospital bill coverage for employees and dependents" },
   { benefit: "Unlimited Telemedicine", detail: "Including mental health support for employees and dependents" },
-  { benefit: "Net Zero Cost", detail: "To most employees — uses subsidies from tax savings" },
+  { benefit: "Net Zero Cost", detail: "To most employees – uses subsidies from tax savings" },
   { benefit: "Benefit Bank", detail: "Most employees will see additional dollars accumulated" },
   { benefit: "Renewal Strategy", detail: "Strategies to help keep costs the same or lower" },
 ];
@@ -50,7 +50,7 @@ const ProtectionPlusPage = () => {
     <ProductDetailLayout
       title="Protection"
       titleAccent="+"
-      subtitle="An employer-sponsored Health and Wellness Program meticulously administered by AMETrust®. Designed to complement — not replace — existing health insurance or voluntary benefits."
+      subtitle="An employer-sponsored Health and Wellness Program meticulously administered by AMETrust®. Designed to complement – not replace – existing health insurance or voluntary benefits."
       heroImage={heroImg}
       heroImageAlt="Employer and employee shaking hands with financial growth chart"
     >
@@ -71,7 +71,7 @@ const ProtectionPlusPage = () => {
                 What is Protection<span className="text-gold">+</span>?
               </h2>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                Protection+ is an employer Health and Wellness Program administered by AMETrust®. The program does not replace existing health insurance or voluntary benefits — it enhances them.
+                Protection+ is an employer Health and Wellness Program administered by AMETrust®. The program does not replace existing health insurance or voluntary benefits – it enhances them.
               </p>
               <div className="p-5 rounded-lg bg-surface border border-border mb-6">
                 <div className="flex items-center gap-3 mb-2">

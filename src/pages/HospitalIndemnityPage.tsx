@@ -25,7 +25,7 @@ const HospitalIndemnityPage = () => {
   return (
     <ProductDetailLayout
       title="Hospital Indemnity Plan"
-      subtitle="Fixed cash benefits for hospital stays resulting from covered accidents or sicknesses — paid directly to you for any purpose."
+      subtitle="Fixed cash benefits for hospital stays resulting from covered accidents or sicknesses – paid directly to you for any purpose."
       heroImage={heroImg}
       heroImageAlt="Modern hospital building exterior"
     >

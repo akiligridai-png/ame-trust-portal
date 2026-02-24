@@ -70,7 +70,7 @@ const AccidentInsurancePage = () => {
   return (
     <ProductDetailLayout
       title="Accident Insurance"
-      subtitle="Financial protection against unexpected costs from injuries. Receive fixed payments directly — regardless of your medical expenses."
+      subtitle="Financial protection against unexpected costs from injuries. Receive fixed payments directly – regardless of your medical expenses."
       heroImage={heroImg}
       heroImageAlt="Person safely enjoying outdoor hiking activity"
     >

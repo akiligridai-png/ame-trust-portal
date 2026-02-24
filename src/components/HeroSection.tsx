@@ -56,7 +56,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
-            AMETrust® is the named fiduciary and plan administrator—providing plan documents and
+            AMETrust® is the named fiduciary and plan administrator – providing plan documents and
             assuming responsibility for all administrative duties.
           </motion.p>
 
