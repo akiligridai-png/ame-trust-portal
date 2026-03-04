@@ -15,10 +15,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
-
-        {/* AME Trust Benefits Overview (from About page) */}
-        <section className="py-16 bg-background">
+        {/* AME Trust Benefits Overview - Primary Hero */}
+        <section className="pt-28 pb-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
