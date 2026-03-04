@@ -69,12 +69,14 @@ const Header = () => {
 
         {/* Login Button + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <Button
-            variant="outline"
-            className="hidden sm:inline-flex bg-gold hover:bg-gold-dark text-primary-foreground font-bold text-sm shadow-gold transition-all duration-200 hover:scale-[1.02] border-none"
+          <a
+            href="https://ame.benefitportal.com/agents/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center justify-center h-10 px-4 rounded-md bg-gold hover:bg-gold-dark text-primary-foreground font-bold text-sm shadow-gold transition-all duration-200 hover:scale-[1.02]"
           >
             Broker Login
-          </Button>
+          </a>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -104,12 +106,14 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Button
-              variant="outline"
-              className="mt-3 bg-gold hover:bg-gold-dark text-primary-foreground font-bold shadow-gold transition-all duration-200 hover:scale-[1.02] border-none sm:hidden"
+            <a
+              href="https://ame.benefitportal.com/agents/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center justify-center h-10 px-4 rounded-md bg-gold hover:bg-gold-dark text-primary-foreground font-bold shadow-gold transition-all duration-200 hover:scale-[1.02] sm:hidden"
             >
               Broker Login
-            </Button>
+            </a>
           </nav>
         </div>
       )}

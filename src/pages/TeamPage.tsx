@@ -5,9 +5,31 @@ import { motion } from "framer-motion";
 import { User, Phone, Mail, ExternalLink } from "lucide-react";
 
 const teamMembers = [
-  { name: "Bob Worgaftik", title: "General Agent", bio: "Seasoned benefits professional with extensive experience in employee benefits and trust administration." },
-  { name: "Richard Gribinas", title: "General Agent", bio: "Strategic leader focused on broker partnerships and organizational growth." },
-  { name: "Pamela Mellor", title: "Associate General Agent", bio: "Experienced professional dedicated to day-to-day operations and client services excellence." },
+  {
+    name: "Jed Regen",
+    title: "President",
+    email: "Jed.regen@ametrustbenefits.com",
+    phones: [
+      { label: "Cellular", value: "201-835-5161" },
+      { label: "Direct", value: "281-805-3771" },
+    ],
+  },
+  {
+    name: "Chase Clissold",
+    title: "Director of Client Services",
+    email: "Chase.Clissold@ametrustbenefits.com",
+    phones: [
+      { label: "Direct", value: "281-305-5801" },
+    ],
+  },
+  {
+    name: "Mackenzie Quinones",
+    title: "Client Services Manager",
+    email: "mackenzie.quinones@ametrustbenefits.com",
+    phones: [
+      { label: "Direct", value: "281-612-4973" },
+    ],
+  },
 ];
 
 const partnerSections = [
@@ -59,7 +81,7 @@ const TeamPage = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4">
-                The AMETrust® <span className="text-gold">Team</span>
+                The AME Trust Benefits <span className="text-gold">Team</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
                 The AME Trust Benefits team works synergistically with dedicated and experienced partners to deliver comprehensive benefits solutions. Each partner brings unique specialties.
@@ -101,8 +123,26 @@ const TeamPage = () => {
                   </div>
                   <div className="p-6 text-center">
                     <h3 className="font-bold text-primary text-lg mb-1">{member.name}</h3>
-                    <p className="text-gold text-sm font-semibold mb-3">{member.title}</p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{member.bio}</p>
+                    <p className="text-gold text-sm font-semibold mb-4">{member.title}</p>
+                    <div className="space-y-2">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
+                      >
+                        <Mail className="w-3.5 h-3.5" />
+                        {member.email}
+                      </a>
+                      {member.phones.map((phone) => (
+                        <a
+                          key={phone.label}
+                          href={`tel:${phone.value.replace(/-/g, "")}`}
+                          className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                          {phone.label}: {phone.value}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
