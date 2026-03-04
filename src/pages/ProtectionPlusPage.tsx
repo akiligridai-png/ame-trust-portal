@@ -59,7 +59,7 @@ const ProtectionPlusPage = () => {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The program is structured to incur net zero cost for most employees, utilizing subsidies from tax savings. Most employees will see additional dollars accumulated in a "benefit bank."
+                The program is structured to be at a net zero cost for most employees.
               </p>
             </motion.div>
             <motion.div
