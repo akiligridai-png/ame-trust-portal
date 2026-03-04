@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
+  { icon: MapPin, label: "Office Address", value: "15814 Champion Forest Drive, Ste 78, Spring TX 77379", href: "https://maps.google.com/?q=15814+Champion+Forest+Drive+Ste+78+Spring+TX+77379" },
   { icon: Mail, label: "General Inquiries", value: "info@ametrustbenefits.com", href: "mailto:info@ametrustbenefits.com" },
   { icon: Mail, label: "Broker Support", value: "brokers@ametrustbenefits.com", href: "mailto:brokers@ametrustbenefits.com" },
   { icon: Mail, label: "Client Services", value: "support@ametrustbenefits.com", href: "mailto:support@ametrustbenefits.com" },

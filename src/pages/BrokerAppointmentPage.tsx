@@ -49,6 +49,13 @@ const BrokerAppointmentPage = () => {
   });
 
   const onSubmit = (data: BrokerFormValues) => {
+    // Build mailto link with form data
+    const subject = encodeURIComponent(`Broker Appointment Request - ${data.firstName} ${data.lastName}`);
+    const body = encodeURIComponent(
+      `Name: ${data.firstName} ${data.lastName}\nTelephone: ${data.telephone}\nEmail: ${data.email}\n\nAffiliated Brokers: ${data.affiliatedBrokers}\nPending Business: ${data.pendingBusiness}\nLicensed: ${data.licensed}\nE&O Coverage: ${data.eoCoverage}\n\nNotes: ${data.notes || "N/A"}`
+    );
+    window.open(`mailto:Jed.regen@ametrustbenefits.com?subject=${subject}&body=${body}`, "_self");
+
     toast({
       title: "Application Received",
       description: "Thanks for taking the time to reach out to us. We will be following up soon!",

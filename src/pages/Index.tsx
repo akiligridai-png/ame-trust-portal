@@ -114,6 +114,7 @@ const Index = () => {
           </div>
         </section>
 
+        <HeroSection />
         <ProductsGrid />
         
       </main>

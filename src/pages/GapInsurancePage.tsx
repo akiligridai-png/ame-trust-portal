@@ -41,11 +41,7 @@ const GapInsurancePage = () => {
               <h2 className="text-3xl font-black text-primary mb-4">
                 What is GAP Insurance?
               </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                GAP insurance functions in conjunction with primary health insurance to alleviate the financial burden of medical expenses that would typically be the patient's responsibility. In the event of an injury or illness covered by health insurance, AME Trust will provide reimbursement up to a specified maximum benefit.
-              </p>
-
-              {/* Key Messaging Box */}
+              {/* Key Messaging Box - Top Priority */}
               <div className="p-5 rounded-lg bg-primary text-primary-foreground mb-6">
                 <div className="flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -54,6 +50,10 @@ const GapInsurancePage = () => {
                   </p>
                 </div>
               </div>
+
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                GAP insurance functions in conjunction with primary health insurance to alleviate the financial burden of medical expenses that would typically be the patient's responsibility with first dollar coverage that can be paid directly to the provider.
+              </p>
 
               {/* Pricing Note */}
               <div className="p-5 rounded-lg bg-surface border border-border mb-6">
