@@ -292,16 +292,6 @@ const ProtectionPlusPage = () => {
                 </div>
               ))}
             </div>
-            <div className="mt-4 pt-4 border-t border-border flex flex-col sm:flex-row justify-center gap-6 text-center">
-              <div>
-                <p className="text-xs text-muted-foreground">Plan Amount</p>
-                <p className="text-lg font-bold text-primary">$1,205.00<span className="text-sm font-normal text-muted-foreground">/month</span></p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Employer Reimbursement</p>
-                <p className="text-lg font-bold text-gold">$1,013.00<span className="text-sm font-normal text-muted-foreground">/month</span></p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
