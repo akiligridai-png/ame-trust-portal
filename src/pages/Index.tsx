@@ -25,7 +25,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}>
                 
-                <h2 className="text-3xl font-black text-primary mb-4">
+                <h2 className="font-black text-primary mb-4 text-5xl">
                   AME Trust Benefits 
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
