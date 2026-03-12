@@ -34,16 +34,6 @@ const Index = () => {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   AMETrust® itself is structured as a Multiple and Multi-Employer Trust, encompassing various Employer groups and Associations. The organization is deeply committed to a broker-centric approach.
                 </p>
-                <div className="p-5 rounded-lg bg-surface border border-border mb-6">
-                  <h3 className="font-bold text-primary mb-2">What is a Multiple Employer Trust?</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Authorized by Congress in 1984 under Section 419(A) of the IRC</li>
-                    <li>• Group of 10 or more employers</li>
-                    <li>• No single employer can contribute more than 10% of total funding</li>
-                    <li>• By definition: All METs are non-profits</li>
-                    <li>• All participants share equally in benefits forfeited by other members</li>
-                  </ul>
-                </div>
                 <p className="text-sm text-muted-foreground mb-4 italic">
                   If you are interested in getting appointed as a Broker, please click on Get Appointed with AMETrust.
                 </p>

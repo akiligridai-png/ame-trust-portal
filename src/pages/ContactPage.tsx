@@ -141,14 +141,6 @@ const ContactPage = () => {
                   ))}
                 </div>
 
-                {/* Mission */}
-                <div className="p-6 rounded-xl bg-primary">
-                  <p className="text-gold italic text-sm leading-relaxed">
-                    "To make healthcare affordable for every working American through innovative products,
-                    creative strategies, cutting edge technology and comprehensive wellness initiatives."
-                  </p>
-                  <p className="text-primary-foreground/60 text-xs mt-3">– AMETrust® Mission Statement</p>
-                </div>
               </motion.div>
             </div>
           </div>

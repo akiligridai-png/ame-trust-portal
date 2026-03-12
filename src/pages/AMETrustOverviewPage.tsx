@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
 import { Shield, Users, Scale, Building2, CheckCircle } from "lucide-react";
+import overviewImg from "@/assets/ametrust-overview-business.jpg";
 
 const benefits = [
   {
@@ -55,7 +56,7 @@ const AMETrustOverviewPage = () => {
         {/* What is a MET */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -68,22 +69,33 @@ const AMETrustOverviewPage = () => {
                 <h2 className="text-3xl font-black text-primary mb-6">
                   What is a Multiple Employer Trust (MET)?
                 </h2>
-                <div className="p-6 rounded-xl bg-surface border border-border mb-8">
-                  <p className="text-muted-foreground leading-relaxed text-lg">
-                    Authorized by Congress in 1984 under Section 419(A) of the Internal Revenue Code. A MET is a group of 10 or more employers where no single employer can contribute more than 10% of total funding. By definition, all METs are non-profits, and all participants share equally in benefits forfeited by other members of the group.
-                  </p>
-                </div>
 
-                <div className="p-6 rounded-xl bg-primary text-primary-foreground mb-8">
-                  <h3 className="text-xl font-bold mb-3">
-                    About <span className="text-gold">AMETrust®</span>
-                  </h3>
-                  <p className="text-primary-foreground/80 leading-relaxed mb-4">
-                    AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®. Acting as the MGA for brokers & third-party administrators, we provide white-glove support to all employer groups.
-                  </p>
-                  <p className="text-primary-foreground/70 leading-relaxed">
-                    AMETrust® itself is structured as a Multiple and Multi-Employer Trust, encompassing various Employer groups and Associations. The organization is deeply committed to a broker-centric approach.
-                  </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
+                  <div className="space-y-4">
+                    <div className="p-6 rounded-xl bg-surface border border-border">
+                      <p className="text-muted-foreground leading-relaxed">
+                        A Multiple Employer Trust (MET) is a group of ten or more employers who form a trust in order to minimize the tax implications of providing certain types of benefits for their employees, including life insurance. The U.S. Congress authorized the formation of METs in 1984 under Section 419(A) of the Internal Revenue Code. A MET is a group of 10 or more employers where no single employer can contribute more than 10% of total funding. By definition, all METs are non-profits, and all participants share equally in benefits forfeited by other members of the group.
+                      </p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-surface border border-border">
+                      <p className="text-muted-foreground leading-relaxed">
+                        AMETrust is distinguished through its structure for ensuring flexibility while ensuring cost-effectiveness for its members. The rules set forth for METs are stringent and require that no single employer contribute more than 10 percent of total funding for the benefit plan purchased by the MET. In addition, the MET must be an indivisible entity, with all participating employers sharing equally in the benefits forfeited by other members of the group. The employees of each participating employer are viewed as if they worked for a single company and are subject to the same requirements.
+                      </p>
+                    </div>
+                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.15 }}
+                  >
+                    <img
+                      src={overviewImg}
+                      alt="Business professionals reviewing benefit plan documents in modern office"
+                      className="rounded-2xl shadow-lg w-full h-[380px] object-cover"
+                      loading="lazy"
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             </div>

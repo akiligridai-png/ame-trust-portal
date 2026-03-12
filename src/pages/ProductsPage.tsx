@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToHome from "@/components/BackToHome";
 import ProductsGrid from "@/components/ProductsGrid";
-import ProtectionPlusHighlight from "@/components/ProtectionPlusHighlight";
+import GapInsuranceHighlight from "@/components/GapInsuranceHighlight";
 import { motion } from "framer-motion";
 
 const ProductsPage = () => {
@@ -30,7 +30,7 @@ const ProductsPage = () => {
           </div>
         </section>
 
-        <ProtectionPlusHighlight />
+        <GapInsuranceHighlight />
         <ProductsGrid />
       </main>
       <Footer />

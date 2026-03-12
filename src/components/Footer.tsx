@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Mail, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import logoDark from "@/assets/ame-trust-benefits-logo-dark.png";
 
 const footerLinks = [
   {
@@ -47,7 +48,7 @@ const Footer = () => {
 
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand Column */}
           <motion.div
             className="lg:col-span-1"
@@ -57,12 +58,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-4">
-              <span className="text-2xl font-black tracking-tight">
-                AME<span className="text-gold">Trust</span>
-              </span>
-              <p className="text-xs tracking-widest uppercase text-primary-foreground/60 mt-0.5">
-                Benefits
-              </p>
+              <img src={logoDark} alt="AME Trust Benefits" className="h-12 w-auto" />
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed mb-6">
               AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®,
@@ -96,56 +92,6 @@ const Footer = () => {
               </ul>
             </motion.div>
           ))}
-
-          {/* Contact Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h4 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
-              Contact
-            </h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 mt-0.5 text-gold shrink-0" />
-                <div className="text-sm">
-                  <p className="text-primary-foreground/50 text-xs mb-0.5">General Inquiries</p>
-                  <a
-                    href="mailto:info@ametrustbenefits.com"
-                    className="text-primary-foreground/70 hover:text-gold transition-colors"
-                  >
-                    info@ametrustbenefits.com
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 mt-0.5 text-gold shrink-0" />
-                <div className="text-sm">
-                  <p className="text-primary-foreground/50 text-xs mb-0.5">Broker Support</p>
-                  <a
-                    href="mailto:brokers@ametrustbenefits.com"
-                    className="text-primary-foreground/70 hover:text-gold transition-colors"
-                  >
-                    brokers@ametrustbenefits.com
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 mt-0.5 text-gold shrink-0" />
-                <div className="text-sm">
-                  <p className="text-primary-foreground/50 text-xs mb-0.5">Client Services</p>
-                  <a
-                    href="mailto:support@ametrustbenefits.com"
-                    className="text-primary-foreground/70 hover:text-gold transition-colors"
-                  >
-                    support@ametrustbenefits.com
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </motion.div>
         </div>
       </div>
 
@@ -157,13 +103,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
             <div className="flex items-center gap-3">
-              <a href="https://www.linkedin.com/company/ametrust" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="AMETrust LinkedIn">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="https://www.linkedin.com/company/ametrust-benefits" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="AMETrust Benefits LinkedIn">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="https://www.linkedin.com/in/ametrust-founder" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="Founder LinkedIn">
+              <a href="https://www.linkedin.com/in/jedregen" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-gold transition-colors" aria-label="Jed Regen LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
