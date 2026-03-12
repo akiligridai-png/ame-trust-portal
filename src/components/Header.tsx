@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logoDark from "@/assets/ame-trust-benefits-logo-dark.png";
 
 const navLinks = [
   { label: "AMETrust® Overview", href: "/ametrust-overview" },
@@ -39,14 +39,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-black tracking-tight text-primary-foreground">
-              AME<span className="text-gold">Trust</span>
-            </span>
-            <span className="text-[10px] md:text-xs font-light tracking-widest uppercase text-primary-foreground/70">
-              Benefits
-            </span>
-          </div>
+          <img src={logoDark} alt="AME Trust Benefits" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

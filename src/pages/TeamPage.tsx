@@ -2,15 +2,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
-import { User, Phone, Mail, ExternalLink } from "lucide-react";
+import { User, Phone, Mail, ExternalLink, Linkedin } from "lucide-react";
 
 const teamMembers = [
   {
     name: "Jed Regen",
     title: "President",
     email: "Jed.regen@ametrustbenefits.com",
+    linkedin: "https://www.linkedin.com/in/jedregen",
     phones: [
-      { label: "Cellular", value: "201-835-5161" },
+      { label: "Cellular", value: "201-425-5561" },
       { label: "Direct", value: "281-805-3771" },
     ],
   },
@@ -19,7 +20,7 @@ const teamMembers = [
     title: "Director of Client Services",
     email: "Chase.Clissold@ametrustbenefits.com",
     phones: [
-      { label: "Direct", value: "281-305-5801" },
+      { label: "Direct", value: "281-305-5805" },
     ],
   },
   {
@@ -27,7 +28,7 @@ const teamMembers = [
     title: "Client Services Manager",
     email: "mackenzie.quinones@ametrustbenefits.com",
     phones: [
-      { label: "Direct", value: "281-612-4973" },
+      { label: "Direct", value: "281-652-4975" },
     ],
   },
 ];
@@ -37,6 +38,9 @@ const partnerSections = [
     title: "AMETrust®",
     role: "Trust Administration & Plan Design",
     description: "AMETrust® creates and uses its own plan designs. Responsible for fiduciary oversight and plan administration service-operations.",
+    contacts: [
+      { type: "link", value: "https://ametrust.org/", label: "Visit Website" },
+    ],
   },
   {
     title: "Allied TPA",
@@ -48,8 +52,8 @@ const partnerSections = [
     role: "Health & Wellness Platform",
     description: "Allied Wellness delivers the health and wellness platform & health coaches. Provides access to professional health coaches and comprehensive wellness programs.",
     contacts: [
-      { type: "phone", value: "(800) 555-0100", label: "Main Line" },
-      { type: "email", value: "wellness@alliedwellness.com", label: "General Inquiries" },
+      { type: "phone", value: "877-515-1770", label: "Main Line" },
+      { type: "email", value: "info@alliedwellness.com", label: "General Inquiries" },
       { type: "link", value: "https://www.alliedwellness.com", label: "Visit Website" },
     ],
   },
@@ -58,9 +62,9 @@ const partnerSections = [
     role: "Technology, Claims & Customer Service",
     description: "For claims and customer service inquiries, please reach out to the appropriate contact.",
     contacts: [
-      { type: "phone", value: "(800) 555-0200", label: "Claims Line" },
-      { type: "email", value: "claims@atpa.com", label: "Claims Support" },
-      { type: "link", value: "https://www.atpa.com", label: "Visit Website" },
+      { type: "phone", value: "(877) 414-5434", label: "Claims Line" },
+      { type: "email", value: "customerservice@ametrust.org", label: "Claims Support" },
+      { type: "link", value: "https://ametrust.org/file-a-claim/", label: "File A Claim" },
     ],
   },
 ];
@@ -135,13 +139,24 @@ const TeamPage = () => {
                       {member.phones.map((phone) => (
                         <a
                           key={phone.label}
-                          href={`tel:${phone.value.replace(/-/g, "")}`}
+                          href={`tel:${phone.value.replace(/[^0-9]/g, "")}`}
                           className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
                         >
                           <Phone className="w-3.5 h-3.5" />
                           {phone.label}: {phone.value}
                         </a>
                       ))}
+                      {"linkedin" in member && member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
+                        >
+                          <Linkedin className="w-3.5 h-3.5" />
+                          LinkedIn
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -188,7 +203,21 @@ const TeamPage = () => {
                           {contact.type === "link" && <ExternalLink className="w-4 h-4 text-gold shrink-0" />}
                           <div>
                             <p className="text-xs text-muted-foreground">{contact.label}</p>
-                            <p className="text-sm text-primary font-medium">{contact.value}</p>
+                            {contact.type === "link" ? (
+                              <a href={contact.value} target="_blank" rel="noopener noreferrer" className="text-sm text-primary font-medium hover:text-gold transition-colors">
+                                {contact.value}
+                              </a>
+                            ) : contact.type === "email" ? (
+                              <a href={`mailto:${contact.value}`} className="text-sm text-primary font-medium hover:text-gold transition-colors">
+                                {contact.value}
+                              </a>
+                            ) : contact.type === "phone" ? (
+                              <a href={`tel:${contact.value.replace(/[^0-9]/g, "")}`} className="text-sm text-primary font-medium hover:text-gold transition-colors">
+                                {contact.value}
+                              </a>
+                            ) : (
+                              <p className="text-sm text-primary font-medium">{contact.value}</p>
+                            )}
                           </div>
                         </div>
                       ))}
