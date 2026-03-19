@@ -1,166 +1,86 @@
 
 
-# Comprehensive Site Update – Document Compliance Audit & Fixes
+# Comprehensive Site Update Plan
 
-After a thorough comparison of both uploaded documents against the current codebase, here are the specific gaps and updates needed.
-
----
-
-## 1. Protection+ Page – Accurate 3 Plan Options (from Protection Presentation Deck)
-
-The current Protection+ page has the right structure but the **option details are incomplete/inaccurate** per the presentation deck. Here are the corrected options:
-
-**Option 1: GAP (Medical) – $5,000 First Dollar**
-- Pays first dollar on coinsurance for Hospital Related Expenses ($5,000 or $2,500 options)
-- Family coverage at no extra cost
-- Inpatient Coverage: pays when hospitalized for at least 24 hours
-- Outpatient Coverage: pays for MRI, ER visits, and treatments without hospital stay
-- ER co-insurance and co-pays are covered
-- Includes Standard/Premier Accident Plan
-- Guaranteed Issue
-- Note: "$2,500 with Premier Accident is also available. Protection+ rates are the same."
-
-**Option 2: GAP Inpatient (GIP) – Hospital Indemnity**
-- For employees that **do not have medical coverage** – Guaranteed Issue
-- Inpatient-Gap Benefit: 1 day @ $1,000
-- Daily Confinement: 30 days @ $100
-- Ambulance Benefit: 1 day @ $250
-- Emergency Room (Injury): 1 day @ $150
-- Emergency Room (Sickness): 1 day @ $150
-- Includes Accident Plan
-- "Great alternative if you don't have health insurance!"
-
-**Option 3: MEC Plan**
-- Family coverage at no extra cost
-- MEC is a hospital reimbursement plan with Minimum Essential Coverage
-- Fixed payments for ambulance, daily inpatient, wellness visits, limited doctor visits
-- Plan includes: Hospital Care, Daily confinement, Physician office visits, Emergency Care, Ambulance (ground/air), Doctor Office Visits (4/year), Limited Rx
-- Guaranteed Issue
-- Combined with Hospital Indemnity: $500 reimbursement for 1-3 days confinement
-
-**All options include:**
-- 24/7 Accident Plan
-- Unlimited Urgent Care, counseling, psychiatric services via Telehealth
-- Personal Health Coaching with a Health Care Professional
-- Allied Wellness App access with premium content
-- No extra cost to add dependents
-- Customizable plans for employer groups of 100+
-- Plan Amount: $1,205.00/month; Employer Reimbursement: $1,013.00/month
-
-**Files:** `src/pages/ProtectionPlusPage.tsx`
+Based on a thorough comparison of the annotated PPTX slides, branding guidelines, uploaded logos, and team photos against the current codebase, here is every change needed.
 
 ---
 
-## 2. Protection+ Benefits Table – Correct Content from Deck
+## Current State Assessment
 
-Update the Employer and Employee benefits tables to match the presentation:
+Many changes from the previous round are already implemented correctly:
+- Homepage: MET box removed, heading enlarged, family park image kept
+- Team page: Correct names, phone numbers (201-425-5561, 281-305-5805, 281-652-4975), LinkedIn for Jed
+- Partner contacts: AMETrust, Allied TPA, Allied Wellness, ATPA Claims all correct
+- Products page: GAP Insurance is already the featured/flagship product
+- GAP Insurance page: Blue box at top, updated description text
+- Broker Appointment: mailto to Jed.regen@ametrustbenefits.com
+- Contact page: Office address added, mission statement box removed
+- Header: Broker Login links to external portal
 
-**Employer Benefits:**
-- Health & Wellness Program – Net Zero Cost to put in place
-- Attracts and Retains Employees
-- FICA savings on plan for each Enrolled Employee
-- Strategy from features that will lower Group Health Renewals
-- Net Zero Cost to Most Employees
-- Strategy on Renewals to keep costs the same or lower
+## Changes Still Needed
 
-**Employee Benefits:**
-- Live Dedicated Medically Licensed Health Coaches
-- First Dollar Coverage on Hospital Bill (Employee and Dependents)
-- Unlimited Telemedicine (Employees and Dependents)
-- Most employees will see additional dollars (benefit bank)
+### 1. Team Page: Add Real Photos for Jed & Chase (`src/pages/TeamPage.tsx`)
+- Copy `user-uploads://JED.jpg` to `src/assets/jed-regen.jpg`
+- Copy `user-uploads://Chase_Clissold.jpg` to `src/assets/chase-clissold.jpg`
+- Replace the generic `User` icon placeholder for Jed with his actual photo
+- Replace the generic `User` icon placeholder for Chase with his actual photo
+- Mackenzie stays with placeholder (no photo provided)
+- Import both images and use `<img>` tags instead of the User icon circle
 
-**Files:** `src/pages/ProtectionPlusPage.tsx`
+### 2. Logo Update: Use Uploaded AMETrust Benefits Logo (`src/components/Header.tsx`, `src/components/Footer.tsx`)
+- The user uploaded `Screenshot_2026-03-13_at_09.55.27.png` showing the desired header/footer logo treatment (dark navy background, "AME" white bold, "Trust" in gold/orange, "BENEFITS" below in white)
+- Copy this PNG to replace the current `src/assets/ame-trust-benefits-logo-dark.png`
+- The BIG_LOGO_TYPE doc shows the "dark orange" look the user wants — the current screenshot logo already has this treatment and should be used as the header/footer logo on dark backgrounds
 
----
+### 3. AMETrust Overview Page: Generate Business Image (`src/pages/AMETrustOverviewPage.tsx`)
+- Page 4 annotated screenshot says "Change to a business type picture if possible" and shows a reference image of two men in suits in a corporate meeting
+- The current `ametrust-overview-business.jpg` was generated previously — need to generate a new high-quality 8K ultra-realistic business professionals image (diverse professionals reviewing documents in a boardroom/office setting)
+- Remove the "About AMETrust®" blue box — already done in current code
 
-## 3. GAP Page – Ensure "Featured Product" Badge Reads Correctly
+### 4. Footer: Remove Contact Email Column (`src/components/Footer.tsx`)
+- Page 9 (Contact page screenshot) annotates the footer's CONTACT column with "Please remove this info"
+- The current footer already has the contact column removed — this is done
+- Verify LinkedIn URL is correct: `https://www.linkedin.com/in/jedregen` — already set
 
-The current ProductsGrid badge says "Door Opener" – update to say **"Featured Product"** to be more professional and client-facing. GAP remains the first product in the grid with a highlighted card style.
+### 5. Contact Page: Form Should Send to Jed's Email
+- The contact form currently just shows a toast — it should also open a mailto to `jed.regen@ametrustbenefits.com` (same as broker appointment pattern)
+- Add a `Telephone` field to the contact form (page 9 shows Name, Email, Subject, Tel, Message)
 
-**Files:** `src/components/ProductsGrid.tsx`
+### 6. Products Page: Verify Protection+ Highlight Still Shows on Products Page
+- Page 3 shows Protection+ as "Flagship Product" on the Products page — but annotation says "Change this page to GAP as initial view"
+- Current code uses `GapInsuranceHighlight` — this is correct per the annotation
+- The ProtectionPlusHighlight component is unused but should be kept for potential future use
 
----
-
-## 4. GAP+ Page – Enhanced Content from Document
-
-The GAP+ page content matches well but needs the following addition from the document:
-- Add the description: "GAP+ integrates an enhanced GAP policy with a comprehensive bundle of healthcare services. It incentivizes individuals to actively participate in their well-being by providing a mechanism to fund the insurance."
-- Add the GAP example scenario from the document: "Ed, enrolled in GAP+, consults his personal dietitian and refills his blood pressure medication monthly. GAP would cover outpatient benefits. Additionally, his AME Trust Accident Policy would pay him for his ER treatment, MRI, and concussion diagnosis – irrespective of his medical expenses."
-
-**Files:** `src/pages/GapPlusPage.tsx`
-
----
-
-## 5. Home Page – Add "Get Appointed" Link Text per Document
-
-The document says: "If you are interested in getting appointed as a Broker, please click on Get Appointed with AMETrust." Add this text above or near the existing CTA button.
-
-**Files:** `src/pages/Index.tsx`
-
----
-
-## 6. Allied Wellness Section on Protection+ (from Deck pages 22-24)
-
-Add Allied Wellness content from the presentation deck:
-
-**Face Scan Vitals:** Remote screening tool using smartphone/tablet/computer (Transdermal Optical Imaging)
-- Contactless, Quick (30 seconds), Private (no images saved)
-
-**Health Screening Benefits:** Biometric Screenings, Health Risk Assessments, Personalized Monthly Health Report, Data analytics risk profiling, 24 Additional Diagnostic Tests
-
-**Health Treatment Benefits:** Physician Consultation, Personal Dietitian, Registered Dietician follow up, Chiropractic Consultation, Registered Nurse Consultation, Prescription Refills, Treatment for Alcoholism/Addiction, Licensed Counselor Treatment
-
-**Privacy & Security:** "None of your personal information is shared with your employer or your health insurance company. The only person looking at your data is your health coach."
-
-**Files:** `src/pages/ProtectionPlusPage.tsx`
+### 7. Branding: Typography Update (`src/index.css`)
+- Branding doc specifies: **Verdana Pro Black** for headings, **Aptos** for body text
+- Currently using Lato from Google Fonts
+- Verdana Pro Black is not available on Google Fonts; closest web-safe option is **Verdana** (bold/black weight)
+- Aptos is a Microsoft font not on Google Fonts; closest fallback is system font stack
+- Update CSS to use Verdana for headings and Aptos with system font fallback for body
 
 ---
 
-## 7. Protection+ Flowchart / Tax Sections Info (from Deck pages 12-13)
+## Summary of Files to Edit
 
-Add informational sections about the tax structure:
-- Section 125: Allows employees to convert taxable benefits into nontaxable benefits (available since 1978)
-- Section 213d: Deduction for medical care expenses (available since 1954)
-- Section 105(b): Non-taxable medical reimbursement dispersed to employee by employer
-- Employer deducts premium from payroll, pays Allied Wellness fee, reduces FICA taxes
+| # | File | Change |
+|---|------|--------|
+| 1 | `src/assets/jed-regen.jpg` | Copy uploaded Jed photo |
+| 2 | `src/assets/chase-clissold.jpg` | Copy uploaded Chase photo |
+| 3 | `src/pages/TeamPage.tsx` | Use real photos for Jed & Chase instead of User icon |
+| 4 | `src/assets/ame-trust-benefits-logo-dark.png` | Replace with uploaded screenshot logo |
+| 5 | `src/pages/AMETrustOverviewPage.tsx` | Generate new 8K business image |
+| 6 | `src/pages/ContactPage.tsx` | Add telephone field, add mailto to Jed on submit |
+| 7 | `src/index.css` | Update font imports to Verdana/Aptos per branding |
 
-**Files:** `src/pages/ProtectionPlusPage.tsx`
-
----
-
-## 8. Protection+ Employer Executive Summary (from Deck pages 9-11)
-
-Add pricing/savings summary:
-- Monthly deduction example: $1,205.00 deduction, $1,013.00 reimbursement = **$192.00 net per employee**
-- Monthly FICA savings: $91.80 per employee
-- Net savings: $91.80 - $45.00 Allied Wellness = **$46.80 per month per employee**
-- Example: 100 employees = $4,680/month = **$56,160 annual savings**
-- Take-home pay example showing employees see additional dollars with Protection+
-
-**Files:** `src/pages/ProtectionPlusPage.tsx`
-
----
-
-## 9. Team Page – "AMETrust creates and uses its own plan designs" text
-
-Add the following from the deck (page 6):
-- "AMETrust® creates and uses its own plan designs"
-- "Allied TPA supports technology, claims and customer service"
-- "Allied Wellness delivers the health and wellness platform & health coaches"
-
-This is already partially there but should be more explicit in the partner descriptions.
-
-**Files:** `src/pages/TeamPage.tsx`
-
----
-
-## Technical Summary
-
-| File | Changes |
-|------|---------|
-| `ProtectionPlusPage.tsx` | Major overhaul: accurate 3 options with full details, benefits tables, pricing summary, Allied Wellness, tax structure |
-| `ProductsGrid.tsx` | Change "Door Opener" badge to "Featured Product" |
-| `GapPlusPage.tsx` | Add scenario example and enhanced description |
-| `Index.tsx` | Add "Get Appointed" link text |
-| `TeamPage.tsx` | Refine partner descriptions |
+### Verification Plan (Agent Mode)
+After all changes, use agent mode to navigate every page and verify:
+- Homepage: family park image present, enlarged heading, no MET box
+- Overview: full MET definition, no "About AMETrust®" box, business image
+- Products: GAP as featured product, all 7 products in grid
+- Team: Jed & Chase photos, correct phone numbers and LinkedIn
+- Contact: address, form with telephone field, mailto to Jed
+- Broker Appointment: mailto to Jed
+- Footer: no contact email column, mission statement banner, correct logo
+- Header: correct logo, Broker Login external link
 
