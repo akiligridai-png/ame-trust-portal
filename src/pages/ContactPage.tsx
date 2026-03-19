@@ -18,12 +18,14 @@ const contactInfo = [
 
 const ContactPage = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message Sent", description: "We'll get back to you as soon as possible." });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0A%0D%0A${formData.message}`;
+    window.location.href = `mailto:jed.regen@ametrustbenefits.com?subject=${encodeURIComponent(formData.subject)}&body=${body}`;
+    toast({ title: "Message Sent", description: "Your email client has been opened to send the message." });
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   return (
