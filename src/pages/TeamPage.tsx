@@ -2,7 +2,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
-import { User, Phone, Mail, ExternalLink, Linkedin } from "lucide-react";
+import { Phone, Mail, ExternalLink, Linkedin, User } from "lucide-react";
+import jedPhoto from "@/assets/jed-regen.jpg";
+import chasePhoto from "@/assets/chase-clissold.jpg";
 
 const teamMembers = [
   {
@@ -121,9 +123,15 @@ const TeamPage = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <div className="h-48 bg-primary/5 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-                      <User className="w-12 h-12 text-primary/40" />
-                    </div>
+                    {i === 0 ? (
+                      <img src={jedPhoto} alt="Jed Regen" className="w-24 h-24 rounded-full object-cover object-top" />
+                    ) : i === 1 ? (
+                      <img src={chasePhoto} alt="Chase Clissold" className="w-24 h-24 rounded-full object-cover object-top" />
+                    ) : (
+                      <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+                        <User className="w-12 h-12 text-primary/40" />
+                      </div>
+                    )}
                   </div>
                   <div className="p-6 text-center">
                     <h3 className="font-bold text-primary text-lg mb-1">{member.name}</h3>

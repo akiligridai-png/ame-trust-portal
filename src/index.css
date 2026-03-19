@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+/* Branding: Verdana for headings, Aptos with system fallbacks for body */
 
 @tailwind base;
 @tailwind components;
@@ -105,11 +105,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
+    font-family: 'Verdana', 'Geneva', sans-serif;
   }
 }
 
