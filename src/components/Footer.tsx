@@ -9,7 +9,7 @@ const footerLinks = [
     links: [
       { label: "AMETrust® Overview", href: "/ametrust-overview" },
       { label: "Products", href: "/products" },
-      { label: "Protection+", href: "/products/protection-plus" },
+      { label: "The AME Trust Team", href: "/team" },
       { label: "Agents & Brokers", href: "/agents" },
       { label: "Contact Us", href: "/contact" },
     ],
@@ -17,8 +17,9 @@ const footerLinks = [
   {
     title: "Products",
     links: [
+      { label: "GAP Insurance", href: "/products/gap-insurance" },
+      { label: "GAP+", href: "/products/gap-plus" },
       { label: "Protection+", href: "/products/protection-plus" },
-      { label: "GAP & GAP+", href: "/products/gap-insurance" },
       { label: "Accident Insurance", href: "/products/accident-insurance" },
       { label: "Critical Illness", href: "/products/critical-illness" },
       { label: "Hospital Indemnity", href: "/products/hospital-indemnity" },
