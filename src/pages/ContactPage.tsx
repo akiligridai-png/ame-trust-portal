@@ -87,6 +87,15 @@ const ContactPage = () => {
                     </div>
                   </div>
                   <div>
+                    <label className="text-sm font-medium text-foreground mb-1.5 block">Telephone</label>
+                    <Input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="Your phone number"
+                    />
+                  </div>
+                  <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">Subject</label>
                     <Input
                       value={formData.subject}

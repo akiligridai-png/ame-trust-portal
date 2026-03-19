@@ -123,9 +123,15 @@ const TeamPage = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <div className="h-48 bg-primary/5 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-                      <User className="w-12 h-12 text-primary/40" />
-                    </div>
+                    {i === 0 ? (
+                      <img src={jedPhoto} alt="Jed Regen" className="w-24 h-24 rounded-full object-cover object-top" />
+                    ) : i === 1 ? (
+                      <img src={chasePhoto} alt="Chase Clissold" className="w-24 h-24 rounded-full object-cover object-top" />
+                    ) : (
+                      <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+                        <User className="w-12 h-12 text-primary/40" />
+                      </div>
+                    )}
                   </div>
                   <div className="p-6 text-center">
                     <h3 className="font-bold text-primary text-lg mb-1">{member.name}</h3>
