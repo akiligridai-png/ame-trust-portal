@@ -2,7 +2,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
-import { User, Phone, Mail, ExternalLink, Linkedin } from "lucide-react";
+import { Phone, Mail, ExternalLink, Linkedin, User } from "lucide-react";
+import jedPhoto from "@/assets/jed-regen.jpg";
+import chasePhoto from "@/assets/chase-clissold.jpg";
 
 const teamMembers = [
   {
