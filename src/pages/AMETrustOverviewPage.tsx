@@ -4,6 +4,7 @@ import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
 import { Shield, Users, Scale, Building2, CheckCircle } from "lucide-react";
 import overviewImg from "@/assets/ametrust-overview-business.jpg";
+import AMETriangleLogo from "@/components/AMETriangleLogo";
 
 const benefits = [
   {
@@ -43,8 +44,9 @@ const AMETrustOverviewPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4">
-                AMETrust® <span className="text-gold">Overview</span>
+              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4 flex items-center flex-wrap gap-2">
+                <AMETriangleLogo variant="dark" size={55} showText={false} />
+                <span>® <span className="text-gold">Overview</span></span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
                 Understanding the Multiple Employer Trust structure and its benefits for employers and employees.

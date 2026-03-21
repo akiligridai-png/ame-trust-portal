@@ -85,8 +85,10 @@ const ProductsGrid = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-black text-primary mb-3">
-            Our Products
+          <h2 className="text-3xl sm:text-4xl font-black mb-3">
+            <span style={{ color: "#273349" }}>AME</span>
+            <span style={{ color: "#F2D696" }}>Trust</span>{" "}
+            <span style={{ color: "#273349" }}>Products</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Comprehensive benefits solutions designed to protect what matters most – your health, your family, and your financial security.

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import AMETriangleLogo from "@/components/AMETriangleLogo";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -41,7 +42,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
             Benefits of being a member of{" "}
-            <span className="text-gold">AMETrust®</span>
+            <AMETriangleLogo variant="dark" size={55} showText={false} className="mx-1" /><span className="text-gold">®</span>
           </motion.h1>
 
           <motion.p
