@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, ExternalLink, Linkedin, User } from "lucide-react";
 import jedPhoto from "@/assets/jed-regen.jpg";
 import chasePhoto from "@/assets/chase-clissold.jpg";
+import BrandedText from "@/components/BrandedText";
 
 const teamMembers = [
   {
