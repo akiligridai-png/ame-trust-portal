@@ -1,86 +1,80 @@
 
 
-# Comprehensive Site Update Plan
+# Implementation Plan: Complete Site Update
 
-Based on a thorough comparison of the annotated PPTX slides, branding guidelines, uploaded logos, and team photos against the current codebase, here is every change needed.
-
----
-
-## Current State Assessment
-
-Many changes from the previous round are already implemented correctly:
-- Homepage: MET box removed, heading enlarged, family park image kept
-- Team page: Correct names, phone numbers (201-425-5561, 281-305-5805, 281-652-4975), LinkedIn for Jed
-- Partner contacts: AMETrust, Allied TPA, Allied Wellness, ATPA Claims all correct
-- Products page: GAP Insurance is already the featured/flagship product
-- GAP Insurance page: Blue box at top, updated description text
-- Broker Appointment: mailto to Jed.regen@ametrustbenefits.com
-- Contact page: Office address added, mission statement box removed
-- Header: Broker Login links to external portal
-
-## Changes Still Needed
-
-### 1. Team Page: Add Real Photos for Jed & Chase (`src/pages/TeamPage.tsx`)
-- Copy `user-uploads://JED.jpg` to `src/assets/jed-regen.jpg`
-- Copy `user-uploads://Chase_Clissold.jpg` to `src/assets/chase-clissold.jpg`
-- Replace the generic `User` icon placeholder for Jed with his actual photo
-- Replace the generic `User` icon placeholder for Chase with his actual photo
-- Mackenzie stays with placeholder (no photo provided)
-- Import both images and use `<img>` tags instead of the User icon circle
-
-### 2. Logo Update: Use Uploaded AMETrust Benefits Logo (`src/components/Header.tsx`, `src/components/Footer.tsx`)
-- The user uploaded `Screenshot_2026-03-13_at_09.55.27.png` showing the desired header/footer logo treatment (dark navy background, "AME" white bold, "Trust" in gold/orange, "BENEFITS" below in white)
-- Copy this PNG to replace the current `src/assets/ame-trust-benefits-logo-dark.png`
-- The BIG_LOGO_TYPE doc shows the "dark orange" look the user wants — the current screenshot logo already has this treatment and should be used as the header/footer logo on dark backgrounds
-
-### 3. AMETrust Overview Page: Generate Business Image (`src/pages/AMETrustOverviewPage.tsx`)
-- Page 4 annotated screenshot says "Change to a business type picture if possible" and shows a reference image of two men in suits in a corporate meeting
-- The current `ametrust-overview-business.jpg` was generated previously — need to generate a new high-quality 8K ultra-realistic business professionals image (diverse professionals reviewing documents in a boardroom/office setting)
-- Remove the "About AMETrust®" blue box — already done in current code
-
-### 4. Footer: Remove Contact Email Column (`src/components/Footer.tsx`)
-- Page 9 (Contact page screenshot) annotates the footer's CONTACT column with "Please remove this info"
-- The current footer already has the contact column removed — this is done
-- Verify LinkedIn URL is correct: `https://www.linkedin.com/in/jedregen` — already set
-
-### 5. Contact Page: Form Should Send to Jed's Email
-- The contact form currently just shows a toast — it should also open a mailto to `jed.regen@ametrustbenefits.com` (same as broker appointment pattern)
-- Add a `Telephone` field to the contact form (page 9 shows Name, Email, Subject, Tel, Message)
-
-### 6. Products Page: Verify Protection+ Highlight Still Shows on Products Page
-- Page 3 shows Protection+ as "Flagship Product" on the Products page — but annotation says "Change this page to GAP as initial view"
-- Current code uses `GapInsuranceHighlight` — this is correct per the annotation
-- The ProtectionPlusHighlight component is unused but should be kept for potential future use
-
-### 7. Branding: Typography Update (`src/index.css`)
-- Branding doc specifies: **Verdana Pro Black** for headings, **Aptos** for body text
-- Currently using Lato from Google Fonts
-- Verdana Pro Black is not available on Google Fonts; closest web-safe option is **Verdana** (bold/black weight)
-- Aptos is a Microsoft font not on Google Fonts; closest fallback is system font stack
-- Update CSS to use Verdana for headings and Aptos with system font fallback for body
+## Overview
+7 changes across 10 files, implementing branding, routing, contact form, and inline SVG logo components.
 
 ---
 
-## Summary of Files to Edit
+## 1. Create `vercel.json` — SPA Routing Fix
+Simple rewrite rule at project root to prevent 404s on direct URL access.
 
-| # | File | Change |
+## 2. Contact Page — Remove Sidebar, Center Form
+**File:** `src/pages/ContactPage.tsx`
+- Delete `contactInfo` array (lines 12-17) and the entire right-side "Get in touch" `motion.div` (lines 127-155)
+- Change grid to single centered column with `max-w-[700px] mx-auto`
+- Remove unused `Mail`, `Phone`, `MapPin` imports
+
+## 3. Create `AMETriangleLogo` SVG Component
+**File:** `src/components/AMETriangleLogo.tsx`
+- Inline SVG replicating the left-column triangle "A" from the PDF:
+  - Dark navy (`#273349`) outer triangle shape
+  - Gold gradient band (`#F2D696`) across the middle (the "A" crossbar)
+  - Below: bold "AME" text + superscript "TM" + "MULTIPLE EMPLOYER" subtitle
+- Props: `variant` ("light" | "dark"), `size` (height in px), `showText` (boolean)
+- Light variant: navy triangle, navy "AME" text — for white/light backgrounds
+- Dark variant: navy triangle stays dark navy, but "AME" text becomes white, "MULTIPLE EMPLOYER" becomes white — for dark navy backgrounds
+- No background rendered — pure SVG paths blend naturally with any container
+
+## 4. Create `BrandedText` Component
+**File:** `src/components/BrandedText.tsx`
+- Renders "AME Trust Benefits" with Verdana (weight 900)
+- Light variant: "AME" `#273349`, "Trust" `#F2D696`, "Benefits" `#273349`
+- Dark variant: "AME" `#FFFFFF`, "Trust" `#F2D696`, "Benefits" `#FFFFFF`
+- Used inline within headings — only affects these specific branded words
+
+## 5. Apply Branded Text & Triangle Logo Across Pages
+
+| File | Change |
+|------|--------|
+| `src/pages/Index.tsx` (line 28-29) | "AME Trust Benefits Overview" → use `BrandedText` for "AME Trust Benefits" + " Overview" |
+| `src/components/HeroSection.tsx` (line 43-44) | Replace `<span>AMETrust®</span>` with inline `AMETriangleLogo` (dark variant, ~55px) + "®" |
+| `src/pages/AMETrustOverviewPage.tsx` (line 46-47) | Replace "AMETrust®" with inline `AMETriangleLogo` (dark variant) + "® Overview" |
+| `src/pages/ProductsPage.tsx` (line 24) | "Our Products" → inline `AMETriangleLogo` (dark variant) + " Products" |
+| `src/components/ProductsGrid.tsx` (line 88-89) | "Our Products" → colored text: "AME" navy, "Trust" gold, "Products" navy (keep existing font) |
+| `src/components/Footer.tsx` (line 64-66) | Style "AME Trust Benefits" in description with branded colors (dark variant inline) |
+| `src/pages/TeamPage.tsx` heading | Style "The AME Trust Benefits Team" with `BrandedText` (light variant) |
+
+## 6. Dark-Background Header/Footer Logo
+**File:** `src/assets/ame-trust-benefits-logo-dark.png`
+- The current logo has navy text on white — poor contrast on dark navy header/footer
+- Generate a version with white "AME", dark orange "Trust", white "Benefits" text on transparent background
+- This is the full "AME Trust Benefits" wordmark logo (not the triangle), used only in Header and Footer
+
+## 7. Footer Tagline
+**File:** `src/components/Footer.tsx`
+- Add *"Innovative Solutions. Endless Possibilities."* in italic serif font (`Georgia, 'Times New Roman', serif`) below the logo in the brand column
+
+---
+
+## Files Summary
+
+| # | File | Action |
 |---|------|--------|
-| 1 | `src/assets/jed-regen.jpg` | Copy uploaded Jed photo |
-| 2 | `src/assets/chase-clissold.jpg` | Copy uploaded Chase photo |
-| 3 | `src/pages/TeamPage.tsx` | Use real photos for Jed & Chase instead of User icon |
-| 4 | `src/assets/ame-trust-benefits-logo-dark.png` | Replace with uploaded screenshot logo |
-| 5 | `src/pages/AMETrustOverviewPage.tsx` | Generate new 8K business image |
-| 6 | `src/pages/ContactPage.tsx` | Add telephone field, add mailto to Jed on submit |
-| 7 | `src/index.css` | Update font imports to Verdana/Aptos per branding |
+| 1 | `vercel.json` | Create |
+| 2 | `src/pages/ContactPage.tsx` | Remove sidebar, center form |
+| 3 | `src/components/AMETriangleLogo.tsx` | Create — inline SVG component |
+| 4 | `src/components/BrandedText.tsx` | Create — branded word styling |
+| 5 | `src/pages/Index.tsx` | Apply BrandedText to heading |
+| 6 | `src/components/HeroSection.tsx` | Replace AMETrust text with triangle logo |
+| 7 | `src/pages/AMETrustOverviewPage.tsx` | Replace AMETrust text with triangle logo |
+| 8 | `src/pages/ProductsPage.tsx` | Triangle logo + "Products" |
+| 9 | `src/components/ProductsGrid.tsx` | Colored "AMETrust Products" text |
+| 10 | `src/components/Footer.tsx` | Branded text in description + tagline |
+| 11 | `src/pages/TeamPage.tsx` | BrandedText in heading |
+| 12 | `src/assets/ame-trust-benefits-logo-dark.png` | Replace with white-text version |
 
-### Verification Plan (Agent Mode)
-After all changes, use agent mode to navigate every page and verify:
-- Homepage: family park image present, enlarged heading, no MET box
-- Overview: full MET definition, no "About AMETrust®" box, business image
-- Products: GAP as featured product, all 7 products in grid
-- Team: Jed & Chase photos, correct phone numbers and LinkedIn
-- Contact: address, form with telephone field, mailto to Jed
-- Broker Appointment: mailto to Jed
-- Footer: no contact email column, mission statement banner, correct logo
-- Header: correct logo, Broker Login external link
+## Verification
+After implementation, navigate all pages to confirm triangle logos render inline naturally, branded text colors are correct, contact form is centered with no sidebar, and all routes work on direct access.
 
