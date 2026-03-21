@@ -4,6 +4,7 @@ import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
 import { Shield, Users, Scale, Building2, CheckCircle } from "lucide-react";
 import overviewImg from "@/assets/ametrust-overview-business.jpg";
+import AMETriangleLogo from "@/components/AMETriangleLogo";
 
 const benefits = [
   {
