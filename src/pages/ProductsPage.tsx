@@ -4,6 +4,7 @@ import BackToHome from "@/components/BackToHome";
 import ProductsGrid from "@/components/ProductsGrid";
 import GapInsuranceHighlight from "@/components/GapInsuranceHighlight";
 import { motion } from "framer-motion";
+import AMETriangleLogo from "@/components/AMETriangleLogo";
 
 const ProductsPage = () => {
   return (
