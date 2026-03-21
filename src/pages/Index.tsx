@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProductsGrid from "@/components/ProductsGrid";
+import BrandedText from "@/components/BrandedText";
 import BrokerSection from "@/components/BrokerSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
