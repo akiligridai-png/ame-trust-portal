@@ -88,7 +88,7 @@ const TeamPage = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4">
-                The AME Trust Benefits <span className="text-gold">Team</span>
+                The <BrandedText variant="dark" /> <span className="text-gold">Team</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
                 The AME Trust Benefits team works synergistically with dedicated and experienced partners to deliver comprehensive benefits solutions. Each partner brings unique specialties.

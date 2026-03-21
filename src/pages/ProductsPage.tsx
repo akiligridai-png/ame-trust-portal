@@ -21,8 +21,9 @@ const ProductsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4">
-                Our <span className="text-gold">Products</span>
+              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4 flex items-center flex-wrap gap-2">
+                <AMETriangleLogo variant="dark" size={55} showText={false} />
+                <span className="text-gold">Products</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
                 Comprehensive benefits solutions designed to protect what matters most.

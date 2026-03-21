@@ -27,7 +27,7 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-4xl sm:text-5xl font-black text-primary mb-4">
-                  AME Trust Benefits Overview
+                  <BrandedText variant="light" /> Overview
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®. Acting as the MGA for brokers & third-party administrators, we provide white-glove support to all employer groups.
