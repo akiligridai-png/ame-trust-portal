@@ -73,7 +73,7 @@ const Index = () => {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl font-black text-primary mb-3">
-                Our Unique Value Proposition
+                AMETrust's Unique Value Proposition
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 AMETrust distinguishes itself through its unique structure, affording tremendous design flexibility while ensuring cost-effectiveness for its members.
