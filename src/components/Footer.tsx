@@ -60,7 +60,7 @@ const Footer = () => {
           >
             <div className="mb-4">
               <img src={logoDark} alt="AME Trust Benefits" className="h-12 w-auto" />
-              <p className="mt-2 text-sm italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#F2D696" }}>
+              <p className="mt-2 text-sm italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#C1692D" }}>
                 Innovative Solutions. Endless Possibilities.
               </p>
             </div>
