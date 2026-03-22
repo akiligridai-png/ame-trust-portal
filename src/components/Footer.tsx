@@ -60,14 +60,14 @@ const Footer = () => {
           >
             <div className="mb-4">
               <img src={logoDark} alt="AME Trust Benefits" className="h-12 w-auto" />
-              <p className="mt-2 text-sm italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#F2D696" }}>
+              <p className="mt-2 text-sm italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#C1692D" }}>
                 Innovative Solutions. Endless Possibilities.
               </p>
             </div>
             <p className="text-sm text-primary-foreground/70 leading-relaxed mb-6">
               <span style={{ fontFamily: "Verdana, Geneva, sans-serif", fontWeight: 900 }}>
                 <span style={{ color: "#FFFFFF" }}>AME</span>{" "}
-                <span style={{ color: "#F2D696" }}>Trust</span>{" "}
+                <span style={{ color: "#C1692D" }}>Trust</span>{" "}
                 <span style={{ color: "#FFFFFF" }}>Benefits</span>
               </span>{" "}
               operates as the authorized sales and distribution arm for AMETrust®,
