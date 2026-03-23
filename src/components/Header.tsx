@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logoDark from "@/assets/ame-trust-benefits-logo-dark.png";
+import AMETrustBenefitsLogo from "@/components/AMETrustBenefitsLogo";
 
 const navLinks = [
   { label: "AMETrust® Overview", href: "/ametrust-overview" },
@@ -39,7 +39,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={logoDark} alt="AME Trust Benefits" className="h-10 md:h-12 w-auto" />
+          <AMETrustBenefitsLogo variant="dark" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

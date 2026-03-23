@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-import logoDark from "@/assets/ame-trust-benefits-logo-dark.png";
+import AMETrustBenefitsLogo from "@/components/AMETrustBenefitsLogo";
 
 const footerLinks = [
   {
@@ -59,7 +59,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-4">
-              <img src={logoDark} alt="AME Trust Benefits" className="h-12 w-auto" />
+              <AMETrustBenefitsLogo variant="dark" className="h-12 w-auto" />
               <p className="mt-2 text-sm italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#C1692D" }}>
                 Innovative Solutions. Endless Possibilities.
               </p>
