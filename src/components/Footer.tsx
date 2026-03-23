@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-import logoDark from "@/assets/ame-trust-benefits-logo-dark.png";
+import AMETrustBenefitsLogo from "@/components/AMETrustBenefitsLogo";
 
 const footerLinks = [
   {
