@@ -85,11 +85,10 @@ const ProductsGrid = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-black mb-3">
-            <span style={{ color: "#273349" }}>AME</span>
-            <span style={{ color: "#C1692D" }}>Trust</span>{" "}
-            <span style={{ color: "#273349" }}>Products</span>
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <AMETriangleLogo variant="light" size={50} showText={false} />
+            <h2 className="text-3xl sm:text-4xl font-black text-primary">Products</h2>
+          </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Comprehensive benefits solutions designed to protect what matters most – your health, your family, and your financial security.
           </p>

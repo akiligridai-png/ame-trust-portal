@@ -43,9 +43,11 @@ const AgentsPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-3xl font-black text-primary mb-4">
-                  Get Appointed with AMETrust®
-                </h2>
+                <div className="flex items-center flex-wrap gap-3 mb-4">
+                  <h2 className="text-3xl font-black text-primary">Get Appointed with</h2>
+                  <AMETriangleLogo variant="light" size={45} showText={false} />
+                  <span className="text-primary text-xl font-black">®</span>
+                </div>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
                   Join our network of trusted brokers and gain access to AMETrust's comprehensive benefits portfolio. Start the appointment process today.
                 </p>

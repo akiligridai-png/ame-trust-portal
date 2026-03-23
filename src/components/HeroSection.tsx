@@ -41,9 +41,17 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
-            Benefits of being a member of{" "}
-            <AMETriangleLogo variant="dark" size={55} showText={false} className="mx-1" /><span className="text-gold">®</span>
+            Benefits of being a member of
           </motion.h1>
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          >
+            <AMETriangleLogo variant="dark" size={80} showText={true} />
+            <span className="text-gold text-2xl font-black align-top ml-1">®</span>
+          </motion.div>
 
           <motion.p
             className="text-lg sm:text-xl text-primary-foreground/80 mb-4 font-light leading-relaxed"

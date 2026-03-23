@@ -72,9 +72,10 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-black text-primary mb-3">
-                AMETrust's Unique Value Proposition
-              </h2>
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <AMETriangleLogo variant="light" size={40} showText={false} />
+                <h2 className="text-3xl font-black text-primary">'s Unique Value Proposition</h2>
+              </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 AMETrust distinguishes itself through its unique structure, affording tremendous design flexibility while ensuring cost-effectiveness for its members.
               </p>
