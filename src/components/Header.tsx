@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logoDark from "@/assets/ame-trust-benefits-logo-dark.png";
+import AMETrustBenefitsLogo from "@/components/AMETrustBenefitsLogo";
 
 const navLinks = [
   { label: "AMETrust® Overview", href: "/ametrust-overview" },
