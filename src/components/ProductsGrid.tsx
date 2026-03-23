@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, HeartPulse, Stethoscope, Activity, Building2, Briefcase } from "lucide-react";
+import AMETriangleLogo from "@/components/AMETriangleLogo";
 
 const products = [
   {
