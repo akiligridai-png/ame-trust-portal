@@ -49,8 +49,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <AMETriangleLogo variant="dark" size={80} showText={true} />
-            <span className="text-gold text-2xl font-black align-top ml-1">®</span>
+            <img src={ameLogoDark} alt="AME Trust Logo" className="h-20 sm:h-24 w-auto" />
           </motion.div>
 
           <motion.p

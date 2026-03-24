@@ -45,8 +45,7 @@ const AMETrustOverviewPage = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center flex-wrap gap-4 mb-4">
-                <AMETriangleLogo variant="dark" size={70} showText={true} />
-                <span className="text-gold text-lg font-black align-top">®</span>
+                <img src={ameLogoDark} alt="AME Trust Logo" className="h-[70px] sm:h-20 w-auto" />
                 <h1 className="text-4xl sm:text-5xl font-black text-gold">Overview</h1>
               </div>
               <p className="text-lg text-primary-foreground/80">

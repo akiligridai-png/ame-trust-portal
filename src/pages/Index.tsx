@@ -74,7 +74,7 @@ const Index = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center justify-center gap-3 mb-3">
-                <AMETriangleLogo variant="light" size={40} showText={false} />
+                <img src={ameIconOnly} alt="AME Trust Logo" className="h-10 sm:h-12 w-auto" />
                 <h2 className="text-3xl font-black text-primary">'s Unique Value Proposition</h2>
               </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
