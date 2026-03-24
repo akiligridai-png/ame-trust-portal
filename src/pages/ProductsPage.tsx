@@ -4,7 +4,7 @@ import BackToHome from "@/components/BackToHome";
 import ProductsGrid from "@/components/ProductsGrid";
 import GapInsuranceHighlight from "@/components/GapInsuranceHighlight";
 import { motion } from "framer-motion";
-import AMETriangleLogo from "@/components/AMETriangleLogo";
+import ameLogoDark from "@/assets/ame-logo-dark-bg.png";
 
 const ProductsPage = () => {
   return (
@@ -22,7 +22,7 @@ const ProductsPage = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center flex-wrap gap-4 mb-4">
-                <AMETriangleLogo variant="dark" size={70} showText={false} />
+                <img src={ameLogoDark} alt="AME Trust Logo" className="h-14 sm:h-16 w-auto" />
                 <h1 className="text-4xl sm:text-5xl font-black text-gold">Products</h1>
               </div>
               <p className="text-lg text-primary-foreground/80">

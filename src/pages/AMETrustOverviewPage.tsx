@@ -4,7 +4,7 @@ import BackToHome from "@/components/BackToHome";
 import { motion } from "framer-motion";
 import { Shield, Users, Scale, Building2, CheckCircle } from "lucide-react";
 import overviewImg from "@/assets/ametrust-overview-business.jpg";
-import AMETriangleLogo from "@/components/AMETriangleLogo";
+import ameLogoDark from "@/assets/ame-logo-dark-bg.png";
 
 const benefits = [
   {
@@ -45,8 +45,7 @@ const AMETrustOverviewPage = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center flex-wrap gap-4 mb-4">
-                <AMETriangleLogo variant="dark" size={70} showText={true} />
-                <span className="text-gold text-lg font-black align-top">®</span>
+                <img src={ameLogoDark} alt="AME Trust Logo" className="h-[70px] sm:h-20 w-auto" />
                 <h1 className="text-4xl sm:text-5xl font-black text-gold">Overview</h1>
               </div>
               <p className="text-lg text-primary-foreground/80">

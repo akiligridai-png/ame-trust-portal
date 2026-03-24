@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import AMETriangleLogo from "@/components/AMETriangleLogo";
+import ameLogoDark from "@/assets/ame-logo-dark-bg.png";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -49,8 +49,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <AMETriangleLogo variant="dark" size={80} showText={true} />
-            <span className="text-gold text-2xl font-black align-top ml-1">®</span>
+            <img src={ameLogoDark} alt="AME Trust Logo" className="h-20 sm:h-24 w-auto" />
           </motion.div>
 
           <motion.p

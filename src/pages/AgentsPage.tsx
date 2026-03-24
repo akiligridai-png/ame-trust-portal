@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import brokerAppointedImg from "@/assets/broker-appointed.jpg";
-import AMETriangleLogo from "@/components/AMETriangleLogo";
+import ameLogoTransparent from "@/assets/ame-logo-transparent.png";
 
 const AgentsPage = () => {
   return (
@@ -46,8 +46,7 @@ const AgentsPage = () => {
               >
                 <div className="flex items-center flex-wrap gap-3 mb-4">
                   <h2 className="text-3xl font-black text-primary">Get Appointed with</h2>
-                  <AMETriangleLogo variant="light" size={45} showText={false} />
-                  <span className="text-primary text-xl font-black">®</span>
+                  <img src={ameLogoTransparent} alt="AME Trust Logo" className="h-12 sm:h-14 w-auto" />
                 </div>
                 <p className="text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
                   Join our network of trusted brokers and gain access to AMETrust's comprehensive benefits portfolio. Start the appointment process today.
