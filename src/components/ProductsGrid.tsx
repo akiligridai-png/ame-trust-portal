@@ -87,7 +87,7 @@ const ProductsGrid = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="flex items-center justify-center gap-3 mb-3">
-            <AMETriangleLogo variant="light" size={50} showText={false} />
+            <img src={ameIconOnly} alt="AME Trust Logo" className="h-12 sm:h-14 w-auto" />
             <h2 className="text-3xl sm:text-4xl font-black text-primary">Products</h2>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
