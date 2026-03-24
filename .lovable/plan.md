@@ -1,49 +1,42 @@
 
 
-# Plan: Replace SVG Triangle Logos with Correct Uploaded Images
+# Plan: Replace Logo Assets with Correct Light/Dark Transparent Versions
 
-## The Problem
-Every instance currently uses the hand-coded `AMETriangleLogo` SVG component (broken triangle outlines). The user uploaded 4 image files and wants them used instead. The previous plan incorrectly proposed using icon-only everywhere — the **full logo with text** (`ame-logo-dark-bg.png` or `ame-logo-transparent.png`) should be used where the logo represents "AMETrust" as an entity name, and icon-only where it's just a small accent mark.
+## Current State
+The site uses older PNG files (`ame-logo-dark-bg.png`, `ame-icon-only-transparent.png`, `ame-logo-transparent.png`) that don't match the newly uploaded high-quality transparent logos.
 
-## Logo Selection Logic
-- **Full logo with text** (includes triangle + "AME™" + "MULTIPLE EMPLOYER"): Use where the logo IS the name — hero sections, page titles, anywhere it replaces the words "AMETrust"
-- **Icon only** (just the triangle mark): Use as a small decorative accent beside headings where text already says the name
+## Two New Assets
+- **`ame-logo-light-transparent.png`** — Dark navy "A" triangle + navy "AME™ MULTIPLE EMPLOYER" text. For **light backgrounds**.
+- **`ame-logo-dark-transparent.png`** — Gold/silver "A" triangle + white "AME™ MULTIPLE EMPLOYER" text. For **dark backgrounds**.
 
-## 6 Replacements
+## Replacements (6 locations)
 
-| # | Location | Current | Replace With | Why |
-|---|----------|---------|-------------|-----|
-| 1 | **Hero** (`HeroSection.tsx` L52-53) | `AMETriangleLogo dark size=80 showText=true` + ® span | `ame-logo-dark-bg.png` ~90px | Full logo represents "AMETrust" — the entity name. Remove ® span (baked into image) |
-| 2 | **Overview hero** (`AMETrustOverviewPage.tsx` L48-49) | `AMETriangleLogo dark size=70 showText=true` + ® span | `ame-logo-dark-bg.png` ~75px | Full logo represents the trust entity in page title. Remove ® span |
-| 3 | **Products page hero** (`ProductsPage.tsx` L25) | `AMETriangleLogo dark size=70 showText=false` | `ame-logo-dark-bg.png` ~65px | Full logo before "Products" — reads as "[AME Trust] Products" |
-| 4 | **Value Proposition** (`Index.tsx` L77) | `AMETriangleLogo light size=40 showText=false` | `ame-icon-only-transparent.png` ~40px | Small accent beside "'s Unique Value Proposition" — icon-only is appropriate here |
-| 5 | **ProductsGrid heading** (`ProductsGrid.tsx` L90) | `AMETriangleLogo light size=50 showText=false` | `ame-icon-only-transparent.png` ~50px | Small accent beside "Products" on white bg — icon-only works |
-| 6 | **Agents "Get Appointed"** (`AgentsPage.tsx` L49-50) | `AMETriangleLogo light size=45 showText=false` + ® span | `ame-logo-transparent.png` ~50px | Full logo represents the trust entity on light background. Remove ® span |
+| # | File | Background | Current Asset | New Asset | Height | Notes |
+|---|------|-----------|---------------|-----------|--------|-------|
+| 1 | `HeroSection.tsx` L52 | Dark (hero overlay) | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-20 sm:h-24` (80-96px) | Large — this is the main hero logo below "Benefits of being a member of" |
+| 2 | `AMETrustOverviewPage.tsx` L48 | Dark (navy hero) | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-16 sm:h-20` (64-80px) | Inline with "Overview" text — slightly smaller than hero |
+| 3 | `ProductsPage.tsx` L25 | Dark (navy hero) | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-14 sm:h-16` (56-64px) | Inline with "Products" text — align with text height |
+| 4 | `Index.tsx` L77 | Light (surface bg) | `ame-icon-only-transparent.png` | `ame-logo-light-transparent.png` | `h-10 sm:h-12` (40-48px) | Small accent beside "'s Unique Value Proposition" heading |
+| 5 | `ProductsGrid.tsx` L90 | Light (white bg) | `ame-icon-only-transparent.png` | `ame-logo-light-transparent.png` | `h-12 sm:h-14` (48-56px) | Beside "Products" heading — slightly larger for section anchor |
+| 6 | `AgentsPage.tsx` L49 | Light (white bg) | `ame-logo-transparent.png` | `ame-logo-light-transparent.png` | `h-12 sm:h-14` (48-56px) | Beside "Get Appointed with" text — match text baseline |
 
 ## Steps
 
-### 1. Copy 3 uploaded images to `src/assets/`
-- `ame-icon-only-transparent.png`
-- `ame-logo-dark-bg.png`
-- `ame-logo-transparent.png`
-
-### 2. Edit 6 files
-Each file: remove `AMETriangleLogo` import, add image import, replace component with `<img>` tag. Remove orphaned ® spans where the full logo already contains the text.
-
-### 3. Header & Footer — NO CHANGES
-These use `AMETrustBenefitsLogo` (the SVG wordmark), which is correct and stays.
+1. Copy `user-uploads://ame-logo-light-transparent.png` → `src/assets/ame-logo-light-transparent.png`
+2. Copy `user-uploads://ame-logo-dark-transparent.png` → `src/assets/ame-logo-dark-transparent.png`
+3. Update imports and `<img>` src in all 6 files — swap old assets for new ones with correct sizing classes
+4. Header and Footer remain untouched (they use `AMETrustBenefitsLogo` SVG wordmark)
 
 ## Files Summary
 
 | # | File | Action |
 |---|------|--------|
-| 1 | `src/assets/ame-icon-only-transparent.png` | Copy from upload |
-| 2 | `src/assets/ame-logo-dark-bg.png` | Copy from upload |
-| 3 | `src/assets/ame-logo-transparent.png` | Copy from upload |
-| 4 | `src/components/HeroSection.tsx` | Full dark-bg logo, remove ® |
-| 5 | `src/pages/AMETrustOverviewPage.tsx` | Full dark-bg logo, remove ® |
-| 6 | `src/pages/ProductsPage.tsx` | Full dark-bg logo |
-| 7 | `src/pages/Index.tsx` | Icon-only for value prop accent |
-| 8 | `src/components/ProductsGrid.tsx` | Icon-only for products accent |
-| 9 | `src/pages/AgentsPage.tsx` | Full transparent logo, remove ® |
+| 1 | `src/assets/ame-logo-light-transparent.png` | Copy from upload |
+| 2 | `src/assets/ame-logo-dark-transparent.png` | Copy from upload |
+| 3 | `src/components/HeroSection.tsx` | Swap import + img src |
+| 4 | `src/pages/AMETrustOverviewPage.tsx` | Swap import + img src |
+| 5 | `src/pages/ProductsPage.tsx` | Swap import + img src |
+| 6 | `src/pages/Index.tsx` | Swap import + img src to light version |
+| 7 | `src/components/ProductsGrid.tsx` | Swap import + img src to light version |
+| 8 | `src/pages/AgentsPage.tsx` | Swap import + img src to light version |
 
