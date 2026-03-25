@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import familyImg from "@/assets/family-protection.jpg";
-import ameIconOnly from "@/assets/ame-icon-only-transparent.png";
+import ameLogoLight from "@/assets/ame-logo-light-transparent.png";
 
 const Index = () => {
   return (
