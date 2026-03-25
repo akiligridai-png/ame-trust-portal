@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import brokerAppointedImg from "@/assets/broker-appointed.jpg";
-import ameLogoTransparent from "@/assets/ame-logo-transparent.png";
+import ameLogoLight from "@/assets/ame-logo-light-transparent.png";
 
 const AgentsPage = () => {
   return (
