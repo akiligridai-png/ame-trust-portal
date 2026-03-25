@@ -44,7 +44,7 @@ const GapInsuranceHighlight = () => {
                 First Dollar Coverage
               </p>
               <p className="text-muted-foreground text-sm mt-1">
-                Up to $5,000 on coinsurance for hospital-related expenses
+                Up to $10,000 on coinsurance and max-out of pocket for hospital-related expenses
               </p>
             </motion.div>
 
