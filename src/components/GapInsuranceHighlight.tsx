@@ -10,7 +10,6 @@ const benefits = [
   "Family coverage at no extra cost – covers employee and dependents",
   "Covers ER co-insurance, co-pays, MRI, and outpatient treatments",
   "Guaranteed Issue – no medical underwriting required",
-  "Includes Standard/Premier Accident Plan",
 ];
 
 const GapInsuranceHighlight = () => {
