@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import familyImg from "@/assets/family-protection.jpg";
-import ameIconOnly from "@/assets/ame-icon-only-transparent.png";
+import ameLogoLight from "@/assets/ame-logo-light-transparent.png";
 
 const Index = () => {
   return (
@@ -74,7 +74,7 @@ const Index = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center justify-center gap-3 mb-3">
-                <img src={ameIconOnly} alt="AME Trust Logo" className="h-10 sm:h-12 w-auto" />
+                <img src={ameLogoLight} alt="AME Trust Logo" className="h-10 sm:h-12 w-auto" />
                 <h2 className="text-3xl font-black text-primary">'s Unique Value Proposition</h2>
               </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">

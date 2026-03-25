@@ -10,7 +10,6 @@ const benefits = [
   "Family coverage at no extra cost – covers employee and dependents",
   "Covers ER co-insurance, co-pays, MRI, and outpatient treatments",
   "Guaranteed Issue – no medical underwriting required",
-  "Includes Standard/Premier Accident Plan",
 ];
 
 const GapInsuranceHighlight = () => {
@@ -45,7 +44,7 @@ const GapInsuranceHighlight = () => {
                 First Dollar Coverage
               </p>
               <p className="text-muted-foreground text-sm mt-1">
-                Up to $5,000 on coinsurance for hospital-related expenses
+                Up to $10,000 on coinsurance and max-out of pocket for hospital-related expenses
               </p>
             </motion.div>
 
@@ -105,7 +104,7 @@ const GapInsuranceHighlight = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Coverage</p>
-              <p className="text-2xl font-black text-gold">$5,000</p>
+              <p className="text-2xl font-black text-gold">$10,000</p>
               <p className="text-xs text-muted-foreground">First Dollar Benefits</p>
             </motion.div>
           </motion.div>
