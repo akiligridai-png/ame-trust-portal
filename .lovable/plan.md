@@ -1,31 +1,39 @@
 
 
-# Plan: Replace Logo Assets with Correct Light/Dark Transparent Versions
+# Plan: Logo Swaps + GAP Insurance Content Fixes
 
-## Current State
-The site uses older PNG files (`ame-logo-dark-bg.png`, `ame-icon-only-transparent.png`, `ame-logo-transparent.png`) that don't match the newly uploaded high-quality transparent logos.
+## Part 1: Swap All Logos to New Light/Dark Transparent Versions
 
-## Two New Assets
-- **`ame-logo-light-transparent.png`** — Dark navy "A" triangle + navy "AME™ MULTIPLE EMPLOYER" text. For **light backgrounds**.
-- **`ame-logo-dark-transparent.png`** — Gold/silver "A" triangle + white "AME™ MULTIPLE EMPLOYER" text. For **dark backgrounds**.
+Replace old PNG assets with the two new uploaded transparent logos based on background color.
 
-## Replacements (6 locations)
+| # | File | Background | Current Asset | New Asset | Size |
+|---|------|-----------|---------------|-----------|------|
+| 1 | `HeroSection.tsx` L52 | Dark | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-20 sm:h-24` |
+| 2 | `AMETrustOverviewPage.tsx` L48 | Dark | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-16 sm:h-20` |
+| 3 | `ProductsPage.tsx` L25 | Dark | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-14 sm:h-16` |
+| 4 | `Index.tsx` L77 | Light | `ame-icon-only-transparent.png` | `ame-logo-light-transparent.png` | `h-10 sm:h-12` |
+| 5 | `ProductsGrid.tsx` L90 | Light | `ame-icon-only-transparent.png` | `ame-logo-light-transparent.png` | `h-12 sm:h-14` |
+| 6 | `AgentsPage.tsx` L49 | Light | `ame-logo-transparent.png` | `ame-logo-light-transparent.png` | `h-10 sm:h-12` |
+| 7 | **`BrokerAppointmentPage.tsx` L80-81** | **Dark** | **Text only ("AMETrust®")** | **`ame-logo-dark-transparent.png`** | **`h-12 sm:h-14`** |
 
-| # | File | Background | Current Asset | New Asset | Height | Notes |
-|---|------|-----------|---------------|-----------|--------|-------|
-| 1 | `HeroSection.tsx` L52 | Dark (hero overlay) | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-20 sm:h-24` (80-96px) | Large — this is the main hero logo below "Benefits of being a member of" |
-| 2 | `AMETrustOverviewPage.tsx` L48 | Dark (navy hero) | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-16 sm:h-20` (64-80px) | Inline with "Overview" text — slightly smaller than hero |
-| 3 | `ProductsPage.tsx` L25 | Dark (navy hero) | `ame-logo-dark-bg.png` | `ame-logo-dark-transparent.png` | `h-14 sm:h-16` (56-64px) | Inline with "Products" text — align with text height |
-| 4 | `Index.tsx` L77 | Light (surface bg) | `ame-icon-only-transparent.png` | `ame-logo-light-transparent.png` | `h-10 sm:h-12` (40-48px) | Small accent beside "'s Unique Value Proposition" heading |
-| 5 | `ProductsGrid.tsx` L90 | Light (white bg) | `ame-icon-only-transparent.png` | `ame-logo-light-transparent.png` | `h-12 sm:h-14` (48-56px) | Beside "Products" heading — slightly larger for section anchor |
-| 6 | `AgentsPage.tsx` L49 | Light (white bg) | `ame-logo-transparent.png` | `ame-logo-light-transparent.png` | `h-12 sm:h-14` (48-56px) | Beside "Get Appointed with" text — match text baseline |
+### Broker Appointment Page (NEW)
+Currently L80-81 says: `Get Appointed with <span className="text-gold">AMETrust®</span>`
+Replace with: `Get Appointed with` + `<img>` of the dark transparent logo inline, removing the text span.
+
+## Part 2: GAP Insurance Content Fixes
+
+### `GapInsuranceHighlight.tsx` (Products page featured section)
+
+1. **L13**: Remove `"Includes Standard/Premier Accident Plan"` from the benefits array
+2. **L48**: Change `$5,000` to `$10,000` and update text to: `"Up to $10,000 on coinsurance and max-out of pocket for hospital-related expenses"`
+3. **L108**: Change floating stat card from `$5,000` to `$10,000`
 
 ## Steps
 
-1. Copy `user-uploads://ame-logo-light-transparent.png` → `src/assets/ame-logo-light-transparent.png`
-2. Copy `user-uploads://ame-logo-dark-transparent.png` → `src/assets/ame-logo-dark-transparent.png`
-3. Update imports and `<img>` src in all 6 files — swap old assets for new ones with correct sizing classes
-4. Header and Footer remain untouched (they use `AMETrustBenefitsLogo` SVG wordmark)
+1. Copy 2 new uploaded images to `src/assets/`
+2. Edit 7 files for logo swaps (update imports + img src)
+3. Edit `GapInsuranceHighlight.tsx` for content fixes
+4. Header & Footer remain untouched
 
 ## Files Summary
 
@@ -33,10 +41,12 @@ The site uses older PNG files (`ame-logo-dark-bg.png`, `ame-icon-only-transparen
 |---|------|--------|
 | 1 | `src/assets/ame-logo-light-transparent.png` | Copy from upload |
 | 2 | `src/assets/ame-logo-dark-transparent.png` | Copy from upload |
-| 3 | `src/components/HeroSection.tsx` | Swap import + img src |
-| 4 | `src/pages/AMETrustOverviewPage.tsx` | Swap import + img src |
-| 5 | `src/pages/ProductsPage.tsx` | Swap import + img src |
-| 6 | `src/pages/Index.tsx` | Swap import + img src to light version |
-| 7 | `src/components/ProductsGrid.tsx` | Swap import + img src to light version |
-| 8 | `src/pages/AgentsPage.tsx` | Swap import + img src to light version |
+| 3 | `src/components/HeroSection.tsx` | Swap to dark transparent |
+| 4 | `src/pages/AMETrustOverviewPage.tsx` | Swap to dark transparent |
+| 5 | `src/pages/ProductsPage.tsx` | Swap to dark transparent |
+| 6 | `src/pages/Index.tsx` | Swap to light transparent |
+| 7 | `src/components/ProductsGrid.tsx` | Swap to light transparent |
+| 8 | `src/pages/AgentsPage.tsx` | Swap to light transparent |
+| 9 | `src/pages/BrokerAppointmentPage.tsx` | Add dark transparent logo replacing text |
+| 10 | `src/components/GapInsuranceHighlight.tsx` | $10K fix + remove last benefit |
 
