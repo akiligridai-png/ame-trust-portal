@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import ameLogoDark from "@/assets/ame-logo-dark-transparent.png";
 
 const brokerFormSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
