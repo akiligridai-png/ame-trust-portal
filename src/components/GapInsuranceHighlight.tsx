@@ -104,7 +104,7 @@ const GapInsuranceHighlight = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Coverage</p>
-              <p className="text-2xl font-black text-gold">$5,000</p>
+              <p className="text-2xl font-black text-gold">$10,000</p>
               <p className="text-xs text-muted-foreground">First Dollar Benefits</p>
             </motion.div>
           </motion.div>

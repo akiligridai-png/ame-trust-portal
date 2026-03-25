@@ -78,9 +78,10 @@ const BrokerAppointmentPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4">
-                Get Appointed with <span className="text-gold">AMETrust®</span>
-              </h1>
+              <div className="flex items-center flex-wrap gap-4 mb-4">
+                <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground">Get Appointed with</h1>
+                <img src={ameLogoDark} alt="AME Trust Logo" className="h-12 sm:h-14 w-auto" />
+              </div>
               <p className="text-lg text-primary-foreground/80">
                 Complete the form below to begin the appointment process.
               </p>

@@ -4,7 +4,7 @@ import BackToHome from "@/components/BackToHome";
 import ProductsGrid from "@/components/ProductsGrid";
 import GapInsuranceHighlight from "@/components/GapInsuranceHighlight";
 import { motion } from "framer-motion";
-import ameLogoDark from "@/assets/ame-logo-dark-bg.png";
+import ameLogoDark from "@/assets/ame-logo-dark-transparent.png";
 
 const ProductsPage = () => {
   return (
