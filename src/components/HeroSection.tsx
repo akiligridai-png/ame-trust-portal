@@ -49,7 +49,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           >
-            <img src={ameLogoDark} alt="AME Trust Logo" className="h-20 sm:h-24 w-auto" />
+            <img src={ameLogoDark} alt="AME Trust Logo" className="h-24 sm:h-28 w-auto" />
           </motion.div>
 
           <motion.p
