@@ -29,18 +29,18 @@ const AMETrustBenefitsLogo = ({ variant = "dark", className = "" }: AMETrustBene
         <tspan fill={ameColor}>AME</tspan>
         <tspan fill={trustColor} fontStyle="normal">Trust</tspan>
       </text>
-      {/* Line 2: B E N E F I T S */}
+      {/* Line 2: B e n e f i t s — spans from A to T */}
       <text
-        x="140"
+        x="42"
         y="58"
-        textAnchor="middle"
+        textAnchor="start"
         fontFamily="Verdana, Geneva, sans-serif"
         fontWeight="400"
-        fontSize="16"
-        letterSpacing="8"
+        fontSize="15"
+        letterSpacing="14.5"
         fill={benefitsColor}
       >
-        BENEFITS
+        Benefits
       </text>
     </svg>
   );
