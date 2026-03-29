@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ameLogoDark from "@/assets/ametrust-benefits-dark-transparent.png";
+import ameLogoDark from "@/assets/ame-logo-dark-transparent.png";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -19,7 +19,7 @@ const HeroSection = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         />
-        <div className="absolute inset-0 gradient-hero pointer-events-none" />
+        <div className="absolute inset-0 gradient-hero" />
       </div>
 
       {/* Content */}
@@ -100,7 +100,7 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary via-primary/60 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
     </section>
   );
 };

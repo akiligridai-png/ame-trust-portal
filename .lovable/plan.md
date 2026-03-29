@@ -1,23 +1,46 @@
 
 
-# Fix Hero Section: New Logo + Button Click Issue
+# Plan: Dark Logo Replacement + Logo Sizing + Broker Tools Section
 
-## Problem 1: Wrong Logo on Hero Image
-The hero section currently shows the triangle logo (`ame-logo-dark-transparent.png`). The user wants the full "AMETrust Benefits" wordmark (uploaded image) displayed instead.
+## Part 1: Replace Dark Background Logo Asset
 
-**Fix**: Copy uploaded `ametrust-benefits-dark-transparent.png` to `src/assets/` and import it in `HeroSection.tsx` replacing the current logo at line 52.
+The uploaded `ame-logo-dark-transparent_V2.jpg` is the new truly transparent dark-background logo. Copy it to `src/assets/ame-logo-dark-transparent.png`, overwriting the current file that has white background artifacts. This single asset swap fixes all 4 dark-background locations automatically (they already import from this path).
 
-## Problem 2: Buttons Don't Work
-The "Explore GAP Insurance" and "Learn More" buttons are unclickable because two overlay divs sit on top of them and intercept pointer events:
-- Line 22: `gradient-hero` overlay covering the entire section
-- Line 103: Bottom gradient fade div
+## Part 2: Increase Logo Sizes
 
-**Fix**: Add `pointer-events-none` to both overlay divs so clicks pass through to the buttons beneath.
+| # | File (Line) | Background | Current Size | New Size |
+|---|-------------|-----------|-------------|---------|
+| 1 | `HeroSection.tsx` L52 | Dark | `h-20 sm:h-24` | `h-24 sm:h-28` |
+| 2 | `AMETrustOverviewPage.tsx` L48 | Dark | `h-[70px] sm:h-20` | `h-16 sm:h-20` |
+| 3 | `ProductsPage.tsx` L25 | Dark | `h-14 sm:h-16` | `h-16 sm:h-20` |
+| 4 | `BrokerAppointmentPage.tsx` L83 | Dark | `h-12 sm:h-14` | `h-14 sm:h-16` |
+| 5 | `Index.tsx` L77 (Value Prop) | Light | `h-10 sm:h-12` | `h-14 sm:h-16` |
+| 6 | `ProductsGrid.tsx` L90 | Light | `h-12 sm:h-14` | `h-16 sm:h-20` |
+| 7 | `AgentsPage.tsx` L49 | Light | `h-10 sm:h-12` | `h-14 sm:h-16` |
 
-## Files
+## Part 3: Add Broker Tools Section to Agents Page
 
-| File | Change |
+The Agents page currently only has a Hero and a "Get Appointed" CTA section. Add a **Broker Tools** section between them with:
+
+- A "Broker Tools" heading with descriptive text
+- A card for the **Proposal Engine** tool linking to `https://proposals.ametrustbenefits.com` (opens in new tab)
+- Keep the existing White Glove Support and Training features from `BrokerSection.tsx` as reference for card styling
+- Professional styling consistent with the rest of the site
+
+## No Changes To
+- Header and Footer logos (already correct)
+- Light background logo asset (already fine)
+
+## Files Summary
+
+| File | Action |
 |------|--------|
-| `src/assets/ametrust-benefits-dark-transparent.png` | Copy uploaded logo |
-| `src/components/HeroSection.tsx` | 1. Import new logo asset. 2. Replace img src at L52. 3. Add `pointer-events-none` to gradient overlay (L22) and bottom gradient (L103) |
+| `src/assets/ame-logo-dark-transparent.png` | Overwrite with uploaded V2 |
+| `src/components/HeroSection.tsx` | Size: `h-24 sm:h-28` |
+| `src/pages/AMETrustOverviewPage.tsx` | Size: `h-16 sm:h-20` |
+| `src/pages/ProductsPage.tsx` | Size: `h-16 sm:h-20` |
+| `src/pages/BrokerAppointmentPage.tsx` | Size: `h-14 sm:h-16` |
+| `src/pages/Index.tsx` | Size: `h-14 sm:h-16` |
+| `src/components/ProductsGrid.tsx` | Size: `h-16 sm:h-20` |
+| `src/pages/AgentsPage.tsx` | Size: `h-14 sm:h-16` + add Broker Tools section with Proposal Engine CTA |
 
