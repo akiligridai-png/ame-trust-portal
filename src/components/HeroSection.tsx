@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ameLogoDark from "@/assets/ame-logo-dark-transparent.png";
+import ameLogoDark from "@/assets/ametrust-benefits-dark-transparent.png";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
