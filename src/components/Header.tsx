@@ -39,7 +39,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <AMETrustBenefitsLogo variant="dark" className="h-10 md:h-12 w-auto" />
+          <AMETrustBenefitsLogo variant="dark" className="h-8 md:h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

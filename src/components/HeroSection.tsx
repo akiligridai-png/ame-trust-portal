@@ -35,21 +35,16 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-primary-foreground"
+          <motion.div
+            className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
-            Benefits of being a member of
-          </motion.h1>
-          <motion.div
-            className="mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-          >
-            <img src={ameLogoDark} alt="AME Trust Logo" className="h-24 sm:h-28 w-auto" />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-primary-foreground">
+              Benefits of being a member of
+            </h1>
+            <img src={ameLogoDark} alt="AME Trust Logo" className="h-12 sm:h-16 w-auto" />
           </motion.div>
 
           <motion.p
