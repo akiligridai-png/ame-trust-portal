@@ -19,7 +19,7 @@ const HeroSection = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         />
-        <div className="absolute inset-0 gradient-hero" />
+        <div className="absolute inset-0 gradient-hero pointer-events-none" />
       </div>
 
       {/* Content */}
