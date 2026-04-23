@@ -114,11 +114,11 @@ const TeamPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto items-stretch">
               {teamMembers.map((member, i) => (
                 <motion.div
                   key={member.name}
-                  className="rounded-xl border border-border bg-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+                  className="h-full flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
