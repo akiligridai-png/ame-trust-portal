@@ -1,35 +1,35 @@
 
 
-# Plan: Refine Team Card Sizing & Photo Consistency
+# Plan: Tablet Breakpoint Polish for Team Page
 
-## Issues to Fix
-1. Email addresses currently use `break-all`, which wraps mid-word and looks unprofessional.
-2. Chase's and Mackenzie's headshots may render at slightly different effective sizes than Jed's due to source image cropping.
+## Issue
+At the tablet viewport (768px), the leadership grid uses `md:grid-cols-3`, giving each card only ~230px of width. The longest email (`mackenzie.quinones@ametrustbenefits.com`) cannot fit on one line at this width even at 11px and is being truncated with an ellipsis. The partner cards section also feels cramped at this width.
 
 ## Changes — `src/pages/TeamPage.tsx`
 
-### 1. Stop email wrapping; shrink font instead
-- Remove `break-all` from the email link and span.
-- Reduce email font size to `text-[11px]` (keeping phone/LinkedIn at `text-xs` for hierarchy).
-- Add `whitespace-nowrap` + `overflow-hidden text-ellipsis` as a safety net so the email never breaks but truncates gracefully on very narrow widths.
-- Slightly widen the card grid: change `max-w-4xl` → `max-w-5xl` and bump gap from `gap-8` → `gap-6` so each card has more horizontal room to fit the longest email (`mackenzie.quinones@ametrustbenefits.com`) on one line.
-- Reduce icon+text gap from `gap-2` → `gap-1.5` to reclaim a few pixels.
+### 1. Leadership grid — defer 3-column layout to `lg`
+- Change `grid-cols-1 md:grid-cols-3` → `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`
+- At 768px (tablet), cards will display in a 2-column layout where each card is ~360px wide — comfortably fitting the longest email on one line.
+- The third card (Mackenzie) wraps to a new row and centers naturally.
+- Add `justify-items-center` and constrain card max-width with `w-full max-w-sm` so the lone third card on tablet doesn't stretch awkwardly.
 
-### 2. Normalize headshot sizing across all three members
-- All three photos already use `w-24 h-24 rounded-full object-cover object-top` — visually identical.
-- Confirm and keep the photo container at `h-48 bg-primary/5 flex items-center justify-center` for all three (already consistent).
-- No code change needed for sizing classes; the perceived difference comes from source image framing. Add `aspect-square` explicitly alongside `w-24 h-24` for guaranteed equality, and keep `object-cover object-top` so faces stay framed.
+### 2. Photo container — slightly tighter on tablet
+- Reduce photo container height from `h-48` to `h-44 sm:h-48` for better proportion on tablet cards.
 
-### 3. Keep card heights equal
-- Already handled via `h-full flex flex-col` + `items-stretch` on the grid — no change.
+### 3. Synergistic Partnership grid — keep 2 columns but tighten gap on tablet
+- Change `gap-8` → `gap-6 lg:gap-8` so partner cards have a bit more breathing room within the 768px container.
+
+### 4. Hero heading — ensure it scales cleanly at tablet
+- Already uses `text-4xl sm:text-5xl` which is fine; no change needed.
 
 ## Result
-- Emails display on a single line at slightly smaller font, professional and readable.
-- All three headshots render at identical 96×96 circular size.
-- Cards remain perfectly equal in width and height.
+- Tablet (768px): Leadership cards in 2 columns, full emails visible on a single line, third card centered below.
+- Mobile (<640px): Single column (unchanged).
+- Desktop (≥1024px): 3-column layout (unchanged from current `md` behavior, just shifted to `lg`).
+- Partner cards keep equal sizing across all breakpoints.
 
 ## Files
 | File | Change |
 |------|--------|
-| `src/pages/TeamPage.tsx` | Remove `break-all`, shrink email font, widen card grid, enforce `aspect-square` on photos |
+| `src/pages/TeamPage.tsx` | Adjust grid breakpoints, photo container height, and partner gap for tablet polish |
 
