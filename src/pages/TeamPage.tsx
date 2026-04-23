@@ -114,7 +114,7 @@ const TeamPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
               {teamMembers.map((member, i) => (
                 <motion.div
                   key={member.name}
@@ -126,11 +126,11 @@ const TeamPage = () => {
                 >
                   <div className="h-48 bg-primary/5 flex items-center justify-center">
                     {i === 0 ? (
-                      <img src={jedPhoto} alt="Jed Regen" className="w-24 h-24 rounded-full object-cover object-top" />
+                      <img src={jedPhoto} alt="Jed Regen" className="w-24 h-24 aspect-square rounded-full object-cover object-top" />
                     ) : i === 1 ? (
-                      <img src={chasePhoto} alt="Chase Clissold" className="w-24 h-24 rounded-full object-cover object-top" />
+                      <img src={chasePhoto} alt="Chase Clissold" className="w-24 h-24 aspect-square rounded-full object-cover object-top" />
                     ) : (
-                      <img src={mackenziePhoto} alt="Mackenzie Quinones" className="w-24 h-24 rounded-full object-cover object-top" />
+                      <img src={mackenziePhoto} alt="Mackenzie Quinones" className="w-24 h-24 aspect-square rounded-full object-cover object-top" />
                     )}
                   </div>
                   <div className="p-5 text-center flex-1 flex flex-col">
@@ -139,10 +139,11 @@ const TeamPage = () => {
                     <div className="space-y-2">
                       <a
                         href={`mailto:${member.email}`}
-                        className="flex items-start justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors break-all"
+                        className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground hover:text-gold transition-colors"
+                        title={member.email}
                       >
-                        <Mail className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                        <span className="break-all">{member.email}</span>
+                        <Mail className="w-3.5 h-3.5 shrink-0" />
+                        <span className="whitespace-nowrap overflow-hidden text-ellipsis">{member.email}</span>
                       </a>
                       {member.phones.map((phone) => (
                         <a
