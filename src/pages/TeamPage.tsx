@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, ExternalLink, Linkedin, User } from "lucide-react";
 import jedPhoto from "@/assets/jed-regen.jpg";
 import chasePhoto from "@/assets/chase-clissold.jpg";
+import mackenziePhoto from "@/assets/mackenzie-quinones.jpg";
 import BrandedText from "@/components/BrandedText";
 
 const teamMembers = [
@@ -129,9 +130,7 @@ const TeamPage = () => {
                     ) : i === 1 ? (
                       <img src={chasePhoto} alt="Chase Clissold" className="w-24 h-24 rounded-full object-cover object-top" />
                     ) : (
-                      <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-                        <User className="w-12 h-12 text-primary/40" />
-                      </div>
+                      <img src={mackenziePhoto} alt="Mackenzie Quinones" className="w-24 h-24 rounded-full object-cover object-top" />
                     )}
                   </div>
                   <div className="p-6 text-center">
