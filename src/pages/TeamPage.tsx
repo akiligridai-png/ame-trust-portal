@@ -114,17 +114,17 @@ const TeamPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch justify-items-center">
               {teamMembers.map((member, i) => (
                 <motion.div
                   key={member.name}
-                  className="h-full flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+                  className="h-full w-full max-w-sm flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  <div className="h-48 bg-primary/5 flex items-center justify-center">
+                  <div className="h-44 sm:h-48 bg-primary/5 flex items-center justify-center">
                     {i === 0 ? (
                       <img src={jedPhoto} alt="Jed Regen" className="w-24 h-24 aspect-square rounded-full object-cover object-top" />
                     ) : i === 1 ? (
@@ -190,7 +190,7 @@ const TeamPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
               {partnerSections.map((section, i) => (
                 <motion.div
                   key={section.title}
