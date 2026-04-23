@@ -133,16 +133,16 @@ const TeamPage = () => {
                       <img src={mackenziePhoto} alt="Mackenzie Quinones" className="w-24 h-24 rounded-full object-cover object-top" />
                     )}
                   </div>
-                  <div className="p-6 text-center">
+                  <div className="p-5 text-center flex-1 flex flex-col">
                     <h3 className="font-bold text-primary text-lg mb-1">{member.name}</h3>
                     <p className="text-gold text-sm font-semibold mb-4">{member.title}</p>
                     <div className="space-y-2">
                       <a
                         href={`mailto:${member.email}`}
-                        className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
+                        className="flex items-start justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors break-all"
                       >
-                        <Mail className="w-3.5 h-3.5" />
-                        {member.email}
+                        <Mail className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                        <span className="break-all">{member.email}</span>
                       </a>
                       {member.phones.map((phone) => (
                         <a
@@ -150,8 +150,8 @@ const TeamPage = () => {
                           href={`tel:${phone.value.replace(/[^0-9]/g, "")}`}
                           className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
                         >
-                          <Phone className="w-3.5 h-3.5" />
-                          {phone.label}: {phone.value}
+                          <Phone className="w-3.5 h-3.5 shrink-0" />
+                          <span>{phone.label}: {phone.value}</span>
                         </a>
                       ))}
                       {"linkedin" in member && member.linkedin && (
@@ -161,8 +161,8 @@ const TeamPage = () => {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-gold transition-colors"
                         >
-                          <Linkedin className="w-3.5 h-3.5" />
-                          LinkedIn
+                          <Linkedin className="w-3.5 h-3.5 shrink-0" />
+                          <span>LinkedIn</span>
                         </a>
                       )}
                     </div>
