@@ -1,35 +1,36 @@
 
 
-# Plan: Tablet Breakpoint Polish for Team Page
+# Plan: Match Wordmark Orange to Exact Logo Color
 
-## Issue
-At the tablet viewport (768px), the leadership grid uses `md:grid-cols-3`, giving each card only ~230px of width. The longest email (`mackenzie.quinones@ametrustbenefits.com`) cannot fit on one line at this width even at 11px and is being truncated with an ellipsis. The partner cards section also feels cramped at this width.
+## Color Change
+Sampled directly from `src/assets/ametrust-benefits-logo.png` — the dominant orange in the "Trust" wordmark of the logo is **#BF4E14** (a deeper burnt orange).
 
-## Changes — `src/pages/TeamPage.tsx`
+Currently, the codebase uses **#C1692D** (a lighter, more amber tone) for "Trust" text and the "Innovative Solutions. Endless Possibilities." tagline — these don't match the actual logo.
 
-### 1. Leadership grid — defer 3-column layout to `lg`
-- Change `grid-cols-1 md:grid-cols-3` → `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`
-- At 768px (tablet), cards will display in a 2-column layout where each card is ~360px wide — comfortably fitting the longest email on one line.
-- The third card (Mackenzie) wraps to a new row and centers naturally.
-- Add `justify-items-center` and constrain card max-width with `w-full max-w-sm` so the lone third card on tablet doesn't stretch awkwardly.
+## Files to Update
 
-### 2. Photo container — slightly tighter on tablet
-- Reduce photo container height from `h-48` to `h-44 sm:h-48` for better proportion on tablet cards.
+### 1. `src/components/BrandedText.tsx` (L13)
+- Change `const gold = "#C1692D";` → `const gold = "#BF4E14";`
+- Rename variable to `orange` for clarity (and update the JSDoc comment that incorrectly says "Trust in gold").
+- Affects: Hero overview heading, Team page heading, and any other use of `<BrandedText>`.
 
-### 3. Synergistic Partnership grid — keep 2 columns but tighten gap on tablet
-- Change `gap-8` → `gap-6 lg:gap-8` so partner cards have a bit more breathing room within the 768px container.
+### 2. `src/components/Footer.tsx` (L63, L70)
+- Change tagline color `#C1692D` → `#BF4E14`
+- Change inline "Trust" wordmark color `#C1692D` → `#BF4E14`
 
-### 4. Hero heading — ensure it scales cleanly at tablet
-- Already uses `text-4xl sm:text-5xl` which is fine; no change needed.
+### 3. `mem://design/branding` and `mem://index.md`
+- Update the documented "Burnt Orange" hex from `#C1692D` to `#BF4E14` so future work stays consistent.
 
 ## Result
-- Tablet (768px): Leadership cards in 2 columns, full emails visible on a single line, third card centered below.
-- Mobile (<640px): Single column (unchanged).
-- Desktop (≥1024px): 3-column layout (unchanged from current `md` behavior, just shifted to `lg`).
-- Partner cards keep equal sizing across all breakpoints.
+Every "AME **Trust** Benefits" wordmark rendered as text (Header context via logo image is unchanged, Footer text wordmark, Hero "Overview" heading, Team page heading) will use the exact same orange as the logo image — visually seamless across all sections.
 
-## Files
+## Out of Scope
+- The "Innovative Solutions" headline color elsewhere (HeroSection) — only the Footer tagline currently uses `#C1692D`; will verify and update if any other instance exists during implementation.
+- Logo image files themselves (no change needed — they already contain #BF4E14).
+
 | File | Change |
 |------|--------|
-| `src/pages/TeamPage.tsx` | Adjust grid breakpoints, photo container height, and partner gap for tablet polish |
+| `src/components/BrandedText.tsx` | `#C1692D` → `#BF4E14` |
+| `src/components/Footer.tsx` | Two `#C1692D` → `#BF4E14` |
+| `mem://design/branding`, `mem://index.md` | Update documented orange hex |
 
