@@ -6,7 +6,7 @@ import { Phone, Mail, ExternalLink, Linkedin, User } from "lucide-react";
 import jedPhoto from "@/assets/jed-regen.jpg";
 import chasePhoto from "@/assets/chase-clissold.jpg";
 import mackenziePhoto from "@/assets/mackenzie-quinones.jpg";
-import BrandedText from "@/components/BrandedText";
+import AMETrustBenefitsLogo from "@/components/AMETrustBenefitsLogo";
 
 const teamMembers = [
   {
@@ -88,8 +88,10 @@ const TeamPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4">
-                The <BrandedText variant="dark" /> <span className="text-gold">Team</span>
+              <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4 flex items-center flex-wrap gap-x-3 gap-y-1">
+                <span>The</span>
+                <AMETrustBenefitsLogo className="h-10 sm:h-12 w-auto" />
+                <span className="text-gold">Team</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
                 The AME Trust Benefits team works synergistically with dedicated and experienced partners to deliver comprehensive benefits solutions. Each partner brings unique specialties.
