@@ -10,7 +10,7 @@ interface BrandedTextProps {
  */
 const BrandedText = ({ variant = "light", className = "" }: BrandedTextProps) => {
   const navyOrWhite = variant === "dark" ? "#FFFFFF" : "#273349";
-  const gold = "#C1692D";
+  const gold = "#BF4E14";
 
   return (
     <span
