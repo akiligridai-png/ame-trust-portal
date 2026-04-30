@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProductsGrid from "@/components/ProductsGrid";
-import BrandedText from "@/components/BrandedText";
+import ametrustWordmarkDark from "@/assets/ame-trust-benefits-logo-dark.png";
 import BrokerSection from "@/components/BrokerSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -27,8 +27,9 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-4xl sm:text-5xl font-black text-primary mb-4">
-                  <BrandedText variant="light" /> Overview
+                <h2 className="text-4xl sm:text-5xl font-black text-primary mb-4 flex items-center flex-wrap gap-x-3 gap-y-1">
+                  <img src={ametrustWordmarkDark} alt="AME Trust Benefits" className="h-12 sm:h-14 w-auto" />
+                  <span>Overview</span>
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   AME Trust Benefits operates as the authorized sales and distribution arm for AMETrust®. Acting as the MGA for brokers & third-party administrators, we provide white-glove support to all employer groups.
