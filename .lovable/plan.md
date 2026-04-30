@@ -1,36 +1,43 @@
 
 
-# Plan: Match Wordmark Orange to Exact Logo Color
+# Plan: Remove White Gap at Top of Every Page
 
-## Color Change
-Sampled directly from `src/assets/ametrust-benefits-logo.png` — the dominant orange in the "Trust" wordmark of the logo is **#BF4E14** (a deeper burnt orange).
+## The Issue
+The `<Header>` is `fixed` at the top (transparent navy, ~72–88px tall). Every page wraps its `<main>` in `pt-24` (96px of top padding) to push content below the header. Because that padding sits on the page's default white background, you see a thin **white strip** above each colored hero section — looks unfinished.
 
-Currently, the codebase uses **#C1692D** (a lighter, more amber tone) for "Trust" text and the "Innovative Solutions. Endless Possibilities." tagline — these don't match the actual logo.
+## The Fix
+Remove `pt-24` from `<main>` on every page and instead let each page's first/hero section extend full-bleed to the top of the viewport, with its own internal top padding (`pt-32` or `pt-28`) so content still clears the fixed header — but the hero's background color (navy, etc.) goes edge-to-edge under the header. No more white gap.
 
-## Files to Update
-
-### 1. `src/components/BrandedText.tsx` (L13)
-- Change `const gold = "#C1692D";` → `const gold = "#BF4E14";`
-- Rename variable to `orange` for clarity (and update the JSDoc comment that incorrectly says "Trust in gold").
-- Affects: Hero overview heading, Team page heading, and any other use of `<BrandedText>`.
-
-### 2. `src/components/Footer.tsx` (L63, L70)
-- Change tagline color `#C1692D` → `#BF4E14`
-- Change inline "Trust" wordmark color `#C1692D` → `#BF4E14`
-
-### 3. `mem://design/branding` and `mem://index.md`
-- Update the documented "Burnt Orange" hex from `#C1692D` to `#BF4E14` so future work stays consistent.
-
-## Result
-Every "AME **Trust** Benefits" wordmark rendered as text (Header context via logo image is unchanged, Footer text wordmark, Hero "Overview" heading, Team page heading) will use the exact same orange as the logo image — visually seamless across all sections.
-
-## Out of Scope
-- The "Innovative Solutions" headline color elsewhere (HeroSection) — only the Footer tagline currently uses `#C1692D`; will verify and update if any other instance exists during implementation.
-- Logo image files themselves (no change needed — they already contain #BF4E14).
+## Files & Changes
 
 | File | Change |
 |------|--------|
-| `src/components/BrandedText.tsx` | `#C1692D` → `#BF4E14` |
-| `src/components/Footer.tsx` | Two `#C1692D` → `#BF4E14` |
-| `mem://design/branding`, `mem://index.md` | Update documented orange hex |
+| `src/pages/Index.tsx` | `pt-28` → `pt-32` on first section (already correct pattern; verify) |
+| `src/pages/ProductsPage.tsx` | Remove `pt-24` from `<main>`; add `pt-32` to first hero section |
+| `src/pages/TeamPage.tsx` | Same |
+| `src/pages/AMETrustOverviewPage.tsx` | Same |
+| `src/pages/AgentsPage.tsx` | Same |
+| `src/pages/AboutPage.tsx` | Same |
+| `src/pages/ContactPage.tsx` | Same |
+| `src/pages/BrokerAppointmentPage.tsx` | Same |
+| `src/components/ProductDetailLayout.tsx` | Same (covers all 7 product detail pages) |
+| `src/components/HeroSection.tsx` | Adjust `pt-24` if needed for visual consistency |
+
+## Pattern Applied
+```tsx
+// Before
+<main className="pt-24">
+  <section className="py-16 bg-primary">...</section>
+</main>
+
+// After
+<main>
+  <section className="pt-32 pb-16 bg-primary">...</section>
+</main>
+```
+
+## Result
+- Hero background colors flow seamlessly under the fixed header — no white strip.
+- Content still clears the header (32 = 128px > header's ~88px max).
+- Cleaner, more polished, magazine-style edge-to-edge look across every page.
 
