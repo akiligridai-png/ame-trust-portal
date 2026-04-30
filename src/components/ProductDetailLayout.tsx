@@ -33,9 +33,9 @@ const ProductDetailLayout = ({
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-24">
+      <main>
         {/* Hero Banner */}
-        <section className="relative py-20 bg-primary overflow-hidden">
+        <section className="relative pt-32 pb-20 bg-primary overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroImage}

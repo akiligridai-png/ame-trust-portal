@@ -77,9 +77,9 @@ const TeamPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-24">
+      <main>
         {/* Hero */}
-        <section className="py-16 bg-primary">
+        <section className="pt-32 pb-16 bg-primary">
           <div className="container mx-auto px-4">
             <BackToHome />
             <motion.div
