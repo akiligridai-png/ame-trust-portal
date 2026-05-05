@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProductsGrid from "@/components/ProductsGrid";
-import ametrustWordmarkDark from "@/assets/ame-trust-benefits-logo-dark.png";
+import AMETrustBenefitsLogo from "@/components/AMETrustBenefitsLogo";
 import BrokerSection from "@/components/BrokerSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -28,7 +28,7 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-4xl sm:text-5xl font-black text-primary mb-4 flex items-center flex-wrap gap-x-3 gap-y-1">
-                  <img src={ametrustWordmarkDark} alt="AME Trust Benefits" className="h-12 sm:h-14 w-auto" />
+                  <AMETrustBenefitsLogo variant="light" className="h-12 sm:h-14 w-auto" />
                   <span>Overview</span>
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
