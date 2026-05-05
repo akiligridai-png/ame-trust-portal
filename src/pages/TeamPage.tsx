@@ -89,8 +89,7 @@ const TeamPage = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl sm:text-5xl font-black text-primary-foreground mb-4 flex items-center flex-wrap gap-x-3 gap-y-1">
-                <span>The</span>
-                <AMETrustBenefitsLogo className="h-10 sm:h-12 w-auto" />
+                <AMETrustBenefitsLogo variant="dark" className="h-10 sm:h-12 w-auto" />
                 <span className="text-gold">Team</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">

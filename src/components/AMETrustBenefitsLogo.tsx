@@ -1,14 +1,18 @@
-import ametrustLogo from "@/assets/ametrust-benefits-logo.png";
+import lightBgLogo from "@/assets/ametrust-benefits-light-transparent.png";
+import darkBgLogo from "@/assets/ametrust-benefits-dark-transparent.png";
 
 interface AMETrustBenefitsLogoProps {
   variant?: "light" | "dark";
   className?: string;
 }
 
-const AMETrustBenefitsLogo = ({ className = "" }: AMETrustBenefitsLogoProps) => {
+// variant="light" => for light backgrounds (navy + orange wordmark)
+// variant="dark"  => for dark backgrounds (white + orange wordmark)
+const AMETrustBenefitsLogo = ({ variant = "light", className = "" }: AMETrustBenefitsLogoProps) => {
+  const src = variant === "dark" ? darkBgLogo : lightBgLogo;
   return (
     <img
-      src={ametrustLogo}
+      src={src}
       alt="AMETrust Benefits"
       className={`inline-block ${className}`}
     />
